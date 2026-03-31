@@ -1,0 +1,1493 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Class – 6º Ano | Colégio Átilla Curumim</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --green: #2d9e6b;
+        --green-light: #4cc98a;
+        --green-dark: #1a6845;
+        --yellow: #f5c518;
+        --orange: #f07b2a;
+        --red: #e74c3c;
+        --blue: #3b82f6;
+        --purple: #7c3aed;
+        --bg: #f0faf5;
+        --card: #ffffff;
+        --text: #1a2e22;
+        --muted: #5a7a65;
+        --border: #c8e8d5;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+      }
+
+      /* HEADER */
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--green-dark) 0%,
+          var(--green) 60%,
+          var(--green-light) 100%
+        );
+        color: white;
+        padding: 40px 24px 60px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      header::before {
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.07);
+        top: -100px;
+        right: -80px;
+      }
+      header::after {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        bottom: -60px;
+        left: -40px;
+      }
+      .school-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        padding: 8px 20px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 20px;
+      }
+      header h1 {
+        font-family: "Nunito", sans-serif;
+        font-size: clamp(28px, 6vw, 48px);
+        font-weight: 900;
+        line-height: 1.1;
+        position: relative;
+      }
+      header h1 span {
+        color: var(--yellow);
+      }
+      header p.subtitle {
+        margin-top: 10px;
+        font-size: 15px;
+        opacity: 0.85;
+        font-weight: 400;
+      }
+      .header-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        margin-top: 20px;
+        position: relative;
+      }
+      .tag {
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 20px;
+        padding: 5px 14px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      /* NAV */
+      nav {
+        background: white;
+        border-bottom: 2px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        overflow-x: auto;
+        gap: 0;
+        padding: 0 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      }
+      nav a {
+        text-decoration: none;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 600;
+        padding: 14px 16px;
+        white-space: nowrap;
+        border-bottom: 3px solid transparent;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      nav a:hover,
+      nav a.active {
+        color: var(--green);
+        border-bottom-color: var(--green);
+      }
+
+      /* MAIN */
+      main {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 32px 16px 60px;
+      }
+
+      /* SECTION */
+      section {
+        margin-bottom: 48px;
+      }
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+      .section-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        flex-shrink: 0;
+      }
+      .section-header h2 {
+        font-family: "Nunito", sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--text);
+      }
+      .section-header p {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 2px;
+      }
+
+      /* CARD */
+      .card {
+        background: white;
+        border-radius: 16px;
+        border: 1.5px solid var(--border);
+        padding: 24px;
+        margin-bottom: 16px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+
+      /* GRAMMAR RULE */
+      .rule-box {
+        background: linear-gradient(135deg, #e8f5ee, #d0ede0);
+        border: 1.5px solid var(--green);
+        border-radius: 16px;
+        padding: 20px 24px;
+        margin-bottom: 16px;
+        position: relative;
+        overflow: hidden;
+      }
+      .rule-box::before {
+        content: "📌";
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        font-size: 20px;
+      }
+      .rule-box h3 {
+        font-family: "Nunito", sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--green-dark);
+        margin-bottom: 10px;
+      }
+      .rule-box p,
+      .rule-box li {
+        font-size: 14px;
+        color: var(--text);
+        line-height: 1.7;
+      }
+      .rule-box ul {
+        padding-left: 20px;
+      }
+
+      /* TABLE */
+      .table-wrap {
+        overflow-x: auto;
+        border-radius: 12px;
+        border: 1.5px solid var(--border);
+        margin-bottom: 16px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+      th {
+        background: var(--green);
+        color: white;
+        padding: 12px 16px;
+        text-align: left;
+        font-weight: 700;
+        font-family: "Nunito", sans-serif;
+      }
+      td {
+        padding: 11px 16px;
+        border-bottom: 1px solid var(--border);
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+      tr:nth-child(even) td {
+        background: #f6fbf8;
+      }
+      .highlight {
+        background: #fff3cd !important;
+        font-weight: 700;
+      }
+
+      /* EXAMPLE */
+      .example {
+        background: #f8fff9;
+        border-left: 4px solid var(--green);
+        border-radius: 0 10px 10px 0;
+        padding: 12px 16px;
+        margin: 10px 0;
+        font-size: 14px;
+        color: var(--text);
+      }
+      .example em {
+        font-style: italic;
+        color: var(--green-dark);
+      }
+      .example strong {
+        color: var(--green-dark);
+      }
+
+      /* PRONOUN CARDS */
+      .pronoun-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 12px;
+        margin: 16px 0;
+      }
+      .pronoun-card {
+        background: linear-gradient(135deg, var(--green), var(--green-light));
+        color: white;
+        border-radius: 12px;
+        padding: 14px 10px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(45, 158, 107, 0.25);
+      }
+      .pronoun-card .en {
+        font-size: 20px;
+        font-weight: 800;
+        font-family: "Nunito", sans-serif;
+      }
+      .pronoun-card .pt {
+        font-size: 11px;
+        opacity: 0.85;
+        margin-top: 4px;
+        font-weight: 500;
+      }
+
+      /* ADJ ORDER BOX */
+      .adj-order {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 14px 0;
+      }
+      .adj-step {
+        background: var(--green);
+        color: white;
+        border-radius: 8px;
+        padding: 8px 14px;
+        font-size: 13px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .adj-arrow {
+        font-size: 18px;
+        color: var(--muted);
+      }
+
+      /* QUIZ */
+      .quiz-question {
+        background: white;
+        border: 1.5px solid var(--border);
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 16px;
+      }
+      .quiz-question p.qtext {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 14px;
+        line-height: 1.5;
+      }
+      .quiz-question p.qtext .blank {
+        display: inline-block;
+        min-width: 80px;
+        border-bottom: 2px solid var(--green);
+        text-align: center;
+      }
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .option {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 14px;
+        border: 1.5px solid var(--border);
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 14px;
+      }
+      .option:hover {
+        border-color: var(--green);
+        background: #f0faf5;
+      }
+      .option.correct {
+        border-color: var(--green);
+        background: #e8f5ee;
+      }
+      .option.wrong {
+        border-color: var(--red);
+        background: #fdecea;
+      }
+      .option .letter {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 13px;
+        flex-shrink: 0;
+        transition: all 0.2s;
+      }
+      .option.correct .letter {
+        background: var(--green);
+        color: white;
+      }
+      .option.wrong .letter {
+        background: var(--red);
+        color: white;
+      }
+      .feedback {
+        display: none;
+        margin-top: 12px;
+        padding: 12px 14px;
+        border-radius: 10px;
+        font-size: 13px;
+        line-height: 1.6;
+        font-weight: 500;
+      }
+      .feedback.correct-fb {
+        background: #e8f5ee;
+        color: var(--green-dark);
+        border: 1px solid var(--green);
+      }
+      .feedback.wrong-fb {
+        background: #fdecea;
+        color: #b91c1c;
+        border: 1px solid var(--red);
+      }
+
+      /* SCORE */
+      .score-display {
+        text-align: center;
+        background: linear-gradient(135deg, var(--green-dark), var(--green));
+        color: white;
+        border-radius: 20px;
+        padding: 28px;
+        margin-top: 24px;
+        display: none;
+      }
+      .score-display .score-num {
+        font-family: "Nunito", sans-serif;
+        font-size: 56px;
+        font-weight: 900;
+        line-height: 1;
+      }
+      .score-display p {
+        opacity: 0.85;
+        margin-top: 8px;
+        font-size: 15px;
+      }
+      .btn {
+        background: var(--yellow);
+        color: var(--green-dark);
+        border: none;
+        border-radius: 12px;
+        padding: 12px 28px;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "Poppins", sans-serif;
+        cursor: pointer;
+        margin-top: 16px;
+        transition: all 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(245, 197, 24, 0.4);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--green);
+        border: 2px solid var(--green);
+        border-radius: 10px;
+        padding: 9px 20px;
+        font-size: 13px;
+        font-weight: 700;
+        font-family: "Poppins", sans-serif;
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-top: 10px;
+      }
+      .btn-outline:hover {
+        background: var(--green);
+        color: white;
+      }
+
+      /* VOCAB */
+      .vocab-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 12px;
+        margin: 16px 0;
+      }
+      .vocab-item {
+        background: white;
+        border: 1.5px solid var(--border);
+        border-radius: 12px;
+        padding: 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .vocab-item:hover {
+        border-color: var(--green);
+        transform: translateY(-2px);
+      }
+      .vocab-item .word {
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--green-dark);
+      }
+      .vocab-item .translation {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 2px;
+        display: none;
+      }
+      .vocab-item.revealed .translation {
+        display: block;
+      }
+      .vocab-item .hint {
+        font-size: 11px;
+        color: var(--green);
+        margin-top: 6px;
+        font-style: italic;
+      }
+
+      /* TIPS */
+      .tip-box {
+        background: linear-gradient(135deg, #fff8e1, #fff3cd);
+        border: 1.5px solid var(--yellow);
+        border-radius: 14px;
+        padding: 16px 20px;
+        margin: 12px 0;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .tip-box .tip-icon {
+        font-size: 22px;
+        flex-shrink: 0;
+      }
+      .tip-box p {
+        font-size: 14px;
+        color: #7a5000;
+        line-height: 1.6;
+      }
+      .tip-box strong {
+        color: #5a3800;
+      }
+
+      /* ACTIVITIES */
+      .activity-box {
+        background: white;
+        border: 1.5px solid var(--border);
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 16px;
+      }
+      .activity-box h4 {
+        font-family: "Nunito", sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--green-dark);
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .fill-input {
+        display: inline-block;
+        border: none;
+        border-bottom: 2px solid var(--green);
+        width: 100px;
+        font-size: 14px;
+        font-family: "Poppins", sans-serif;
+        color: var(--text);
+        background: transparent;
+        text-align: center;
+        padding: 2px 4px;
+        outline: none;
+      }
+      .check-btn {
+        background: var(--green);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 18px;
+        font-size: 13px;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+        cursor: pointer;
+        margin-top: 12px;
+        transition: background 0.2s;
+      }
+      .check-btn:hover {
+        background: var(--green-dark);
+      }
+      .activity-result {
+        margin-top: 10px;
+        font-size: 13px;
+        display: none;
+      }
+
+      /* FOOTER */
+      footer {
+        text-align: center;
+        padding: 30px 16px;
+        background: var(--green-dark);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 13px;
+      }
+      footer strong {
+        color: white;
+      }
+
+      /* PRINT */
+      @media print {
+        nav,
+        .quiz-section,
+        footer {
+          display: none;
+        }
+        .card,
+        .rule-box {
+          break-inside: avoid;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      section {
+        animation: fadeIn 0.5s ease both;
+      }
+      section:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      section:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      section:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="school-badge">
+        🏫 Colégio Átilla Curumim &nbsp;|&nbsp; 6º Ano
+      </div>
+      <h1>English Class<br /><span>Grammar & Vocabulary</span></h1>
+      <p class="subtitle">
+        Pronomes Pessoais · Simple Present · Ordem dos Adjetivos
+      </p>
+      <div class="header-tags">
+        <span class="tag">📚 Conteúdo</span>
+        <span class="tag">📝 Exercícios</span>
+        <span class="tag">🎯 Quiz</span>
+        <span class="tag">💡 Dicas</span>
+        <span class="tag">🔤 Vocabulário</span>
+      </div>
+    </header>
+
+    <nav>
+      <a href="#pronouns">👤 Pronomes</a>
+      <a href="#simplepresent">⏱️ Simple Present</a>
+      <a href="#adjectives">🎨 Adjetivos</a>
+      <a href="#vocabulary">🔤 Vocabulário</a>
+      <a href="#exercises">✏️ Atividades</a>
+      <a href="#quiz">🎯 Quiz</a>
+    </nav>
+
+    <main>
+      <!-- ======================== PRONOMES ======================== -->
+      <section id="pronouns">
+        <div class="section-header">
+          <div class="section-icon" style="background: #e8f5ee">👤</div>
+          <div>
+            <h2>Personal Pronouns (Pronomes Pessoais)</h2>
+            <p>Palavras que substituem nomes de pessoas ou coisas</p>
+          </div>
+        </div>
+
+        <div class="pronoun-grid">
+          <div
+            class="pronoun-card"
+            style="background: linear-gradient(135deg, #2d9e6b, #4cc98a)"
+          >
+            <div class="en">I</div>
+            <div class="pt">eu</div>
+          </div>
+          <div
+            class="pronoun-card"
+            style="background: linear-gradient(135deg, #3b82f6, #60a5fa)"
+          >
+            <div class="en">You</div>
+            <div class="pt">você / tu</div>
+          </div>
+          <div
+            class="pronoun-card"
+            style="background: linear-gradient(135deg, #f07b2a, #fbbf24)"
+          >
+            <div class="en">He</div>
+            <div class="pt">ele</div>
+          </div>
+          <div
+            class="pronoun-card"
+            style="background: linear-gradient(135deg, #7c3aed, #a78bfa)"
+          >
+            <div class="en">She</div>
+            <div class="pt">ela</div>
+          </div>
+          <div
+            class="pronoun-card"
+            style="background: linear-gradient(135deg, #e74c3c, #fb7185)"
+          >
+            <div class="en">It</div>
+            <div class="pt">ele/ela (coisa/animal)</div>
+          </div>
+          <div
+            class="pronoun-card"
+            style="background: linear-gradient(135deg, #0891b2, #22d3ee)"
+          >
+            <div class="en">We</div>
+            <div class="pt">nós</div>
+          </div>
+          <div
+            class="pronoun-card"
+            style="background: linear-gradient(135deg, #059669, #34d399)"
+          >
+            <div class="en">You</div>
+            <div class="pt">vocês</div>
+          </div>
+          <div
+            class="pronoun-card"
+            style="background: linear-gradient(135deg, #b45309, #f59e0b)"
+          >
+            <div class="en">They</div>
+            <div class="pt">eles/elas</div>
+          </div>
+        </div>
+
+        <div class="rule-box">
+          <h3>Como escolher o pronome certo?</h3>
+          <ul>
+            <li>
+              <strong>She</strong> → mulher ou menina:
+              <em
+                >Mary is a doctor. <strong>She</strong> works at the
+                hospital.</em
+              >
+            </li>
+            <li>
+              <strong>He</strong> → homem ou menino:
+              <em>John plays soccer. <strong>He</strong> is great!</em>
+            </li>
+            <li>
+              <strong>It</strong> → animal ou objeto:
+              <em>My dog is friendly. <strong>It</strong> loves to play.</em>
+            </li>
+            <li>
+              <strong>They</strong> → mais de uma pessoa ou coisa:
+              <em>My parents are home. <strong>They</strong> are cooking.</em>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-icon">💡</div>
+          <p>
+            <strong>Dica prática:</strong> Antes de escolher o pronome,
+            identifique quem ou o que está sendo substituído: é masculino,
+            feminino, plural? Isso resolve a maioria das questões!
+          </p>
+        </div>
+      </section>
+
+      <!-- ======================== SIMPLE PRESENT ======================== -->
+      <section id="simplepresent">
+        <div class="section-header">
+          <div class="section-icon" style="background: #e8f0fe">⏱️</div>
+          <div>
+            <h2>Simple Present (Presente Simples)</h2>
+            <p>Usado para hábitos, rotinas e fatos gerais</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3
+            style="
+              font-family: &quot;Nunito&quot;, sans-serif;
+              font-weight: 800;
+              font-size: 16px;
+              margin-bottom: 14px;
+              color: var(--green-dark);
+            "
+          >
+            📋 Quando usar?
+          </h3>
+          <div class="example">
+            ✅ Hábitos e rotinas:
+            <em>She <strong>plays</strong> tennis every day.</em>
+          </div>
+          <div class="example">
+            ✅ Fatos permanentes:
+            <em>The sun <strong>rises</strong> in the east.</em>
+          </div>
+          <div class="example">
+            ✅ Preferências: <em>He <strong>likes</strong> new blue cars.</em>
+          </div>
+        </div>
+
+        <div class="rule-box">
+          <h3>🔑 Regra do -S (Terceira pessoa do singular: He / She / It)</h3>
+          <p>
+            Quando o sujeito é <strong>he, she ou it</strong>, o verbo recebe
+            <strong>-s, -es ou -ies</strong> no final:
+          </p>
+          <ul style="margin-top: 8px">
+            <li>
+              play → play<strong>s</strong> &nbsp;|&nbsp; work → work<strong
+                >s</strong
+              >
+            </li>
+            <li>
+              do → do<strong>es</strong> &nbsp;|&nbsp; go → go<strong
+                >es</strong
+              >
+            </li>
+            <li>
+              study → stud<strong>ies</strong> &nbsp;|&nbsp; carry → carr<strong
+                >ies</strong
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Sujeito</th>
+                <th>Verbo (play)</th>
+                <th>Exemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>I</td>
+                <td>play</td>
+                <td>I play soccer.</td>
+              </tr>
+              <tr>
+                <td>You</td>
+                <td>play</td>
+                <td>You play guitar.</td>
+              </tr>
+              <tr class="highlight">
+                <td>He / She / It</td>
+                <td>
+                  <strong>play<u>s</u></strong>
+                </td>
+                <td>She plays piano. ⭐</td>
+              </tr>
+              <tr>
+                <td>We</td>
+                <td>play</td>
+                <td>We play basketball.</td>
+              </tr>
+              <tr>
+                <td>You (pl.)</td>
+                <td>play</td>
+                <td>You play volleyball.</td>
+              </tr>
+              <tr>
+                <td>They</td>
+                <td>play</td>
+                <td>They play chess.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3
+            style="
+              font-family: &quot;Nunito&quot;, sans-serif;
+              font-weight: 800;
+              font-size: 16px;
+              margin-bottom: 14px;
+              color: var(--green-dark);
+            "
+          >
+            ❓ Perguntas com DO / DOES
+          </h3>
+          <div class="table-wrap" style="margin: 0">
+            <table>
+              <thead>
+                <tr>
+                  <th>Sujeito</th>
+                  <th>Auxiliar</th>
+                  <th>Exemplo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>I / You / We / They</td>
+                  <td><strong>Do</strong></td>
+                  <td><em>Do you like pizza?</em></td>
+                </tr>
+                <tr class="highlight">
+                  <td>He / She / It</td>
+                  <td><strong>Does</strong></td>
+                  <td><em>Does he like blue cars?</em> ⭐</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tip-box" style="margin-top: 14px">
+            <div class="tip-icon">⚠️</div>
+            <p>
+              <strong>Atenção:</strong> Quando usamos DOES na pergunta, o verbo
+              principal volta à forma base (sem -s):
+              <em
+                >Does he like<del>s</del>? ❌ &nbsp;|&nbsp; Does he like? ✅</em
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3
+            style="
+              font-family: &quot;Nunito&quot;, sans-serif;
+              font-weight: 800;
+              font-size: 16px;
+              margin-bottom: 14px;
+              color: var(--green-dark);
+            "
+          >
+            🚫 Negativa com DON'T / DOESN'T
+          </h3>
+          <div class="example">
+            I / You / We / They → <strong>don't</strong> + verbo:
+            <em>They <strong>don't</strong> own a car.</em>
+          </div>
+          <div class="example">
+            He / She / It → <strong>doesn't</strong> + verbo:
+            <em>Mark <strong>doesn't own</strong> that chair.</em>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================== ADJETIVOS ======================== -->
+      <section id="adjectives">
+        <div class="section-header">
+          <div class="section-icon" style="background: #fef3c7">🎨</div>
+          <div>
+            <h2>Adjective Order (Ordem dos Adjetivos)</h2>
+            <p>A ordem correta dos adjetivos antes do substantivo</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3
+            style="
+              font-family: &quot;Nunito&quot;, sans-serif;
+              font-weight: 800;
+              font-size: 16px;
+              margin-bottom: 16px;
+              color: var(--green-dark);
+            "
+          >
+            📐 Ordem dos Adjetivos em Inglês
+          </h3>
+          <div class="adj-order">
+            <div class="adj-step" style="background: #e74c3c">
+              Opinion<br /><small>beautiful</small>
+            </div>
+            <div class="adj-arrow">→</div>
+            <div class="adj-step" style="background: #f07b2a">
+              Size<br /><small>big / small</small>
+            </div>
+            <div class="adj-arrow">→</div>
+            <div class="adj-step" style="background: #f5c518; color: #333">
+              Age<br /><small>old / new</small>
+            </div>
+            <div class="adj-arrow">→</div>
+            <div class="adj-step" style="background: #3b82f6">
+              Shape<br /><small>round</small>
+            </div>
+            <div class="adj-arrow">→</div>
+            <div class="adj-step" style="background: #7c3aed">
+              Color<br /><small>blue / yellow</small>
+            </div>
+            <div class="adj-arrow">→</div>
+            <div class="adj-step" style="background: #2d9e6b">
+              Origin<br /><small>Italian</small>
+            </div>
+            <div class="adj-arrow">→</div>
+            <div class="adj-step" style="background: #374151">
+              Material<br /><small>wooden</small>
+            </div>
+          </div>
+          <p
+            style="
+              font-size: 13px;
+              color: var(--muted);
+              margin-top: 12px;
+              font-style: italic;
+            "
+          >
+            Macete: <strong>O-S-A-S-C-O-M</strong> (Opinion · Size · Age · Shape
+            · Color · Origin · Material)
+          </p>
+        </div>
+
+        <div class="rule-box">
+          <h3>🔍 Exemplos da prova:</h3>
+          <p>We have a <strong>small old Italian</strong> table.</p>
+          <p style="margin-top: 6px">
+            → Size (small) → Age (old) → Origin (Italian) ✅
+          </p>
+          <br />
+          <p>
+            Mark doesn't own that <strong>ugly yellow plastic</strong> chair.
+          </p>
+          <p style="margin-top: 6px">
+            → Opinion (ugly) → Color (yellow) → Material (plastic) ✅
+          </p>
+          <br />
+          <p>
+            My sister often carries a
+            <strong>heavy rectangular wooden</strong> box.
+          </p>
+          <p style="margin-top: 6px">
+            → Size (heavy) → Shape (rectangular) → Material (wooden) ✅
+          </p>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-icon">🧠</div>
+          <p>
+            <strong>Regra de ouro:</strong> Em inglês, os adjetivos vêm ANTES do
+            substantivo e seguem uma ordem específica. Nunca dizemos "box wooden
+            rectangular heavy" — a ordem importa!
+          </p>
+        </div>
+      </section>
+
+      <!-- ======================== VOCABULÁRIO ======================== -->
+      <section id="vocabulary">
+        <div class="section-header">
+          <div class="section-icon" style="background: #f0e6ff">🔤</div>
+          <div>
+            <h2>Vocabulary (Vocabulário)</h2>
+            <p>Clique nos cards para revelar a tradução!</p>
+          </div>
+        </div>
+
+        <div class="vocab-grid" id="vocabGrid">
+          <!-- Adjectives -->
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">beautiful</div>
+            <div class="translation">bonito(a)</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">heavy</div>
+            <div class="translation">pesado(a)</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">rectangular</div>
+            <div class="translation">retangular</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">wooden</div>
+            <div class="translation">de madeira</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">ugly</div>
+            <div class="translation">feio(a)</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">plastic</div>
+            <div class="translation">de plástico</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">Italian</div>
+            <div class="translation">italiano(a)</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">delicious</div>
+            <div class="translation">delicioso(a)</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+          <!-- Verbs -->
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">carry</div>
+            <div class="translation">carregar</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">cook</div>
+            <div class="translation">cozinhar</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">own</div>
+            <div class="translation">possuir / ter</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">work</div>
+            <div class="translation">trabalhar</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">live</div>
+            <div class="translation">morar / viver</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+          <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+            <div class="word">like</div>
+            <div class="translation">gostar</div>
+            <div class="hint">👆 clique para ver</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================== ATIVIDADES ======================== -->
+      <section id="exercises">
+        <div class="section-header">
+          <div class="section-icon" style="background: #e8f5ee">✏️</div>
+          <div>
+            <h2>Practice Activities (Atividades)</h2>
+            <p>Complete as atividades abaixo</p>
+          </div>
+        </div>
+
+        <!-- Fill in the blanks -->
+        <div class="activity-box">
+          <h4>
+            ✏️ Atividade 1 – Fill in the blanks (Complete com o pronome correto)
+          </h4>
+          <p style="font-size: 14px; line-height: 2.2; color: var(--text)">
+            1. John is my brother.
+            <input class="fill-input" id="a1" placeholder="___" /> plays
+            football.<br />
+            2. Maria is my sister.
+            <input class="fill-input" id="a2" placeholder="___" /> is a
+            teacher.<br />
+            3. My parents are home.
+            <input class="fill-input" id="a3" placeholder="___" /> are
+            cooking.<br />
+            4. My dog is lost.
+            <input class="fill-input" id="a4" placeholder="___" /> is very
+            small.<br />
+            5. I have a car.
+            <input class="fill-input" id="a5" placeholder="___" /> is red.
+          </p>
+          <button class="check-btn" onclick="checkActivity1()">
+            Verificar ✓
+          </button>
+          <div class="activity-result" id="res1"></div>
+        </div>
+
+        <!-- Verb form -->
+        <div class="activity-box">
+          <h4>
+            ⏱️ Atividade 2 – Simple Present (Escreva o verbo na forma correta)
+          </h4>
+          <p style="font-size: 14px; line-height: 2.5; color: var(--text)">
+            1. She _______ (study) English every day. →
+            <input class="fill-input" id="b1" placeholder="___" /><br />
+            2. They _______ (play) soccer on Sundays. →
+            <input class="fill-input" id="b2" placeholder="___" /><br />
+            3. He _______ (go) to school by bus. →
+            <input class="fill-input" id="b3" placeholder="___" /><br />
+            4. We _______ (have) a big house. →
+            <input class="fill-input" id="b4" placeholder="___" /><br />
+            5. My mother _______ (cook) every night. →
+            <input class="fill-input" id="b5" placeholder="___" />
+          </p>
+          <button class="check-btn" onclick="checkActivity2()">
+            Verificar ✓
+          </button>
+          <div class="activity-result" id="res2"></div>
+        </div>
+
+        <!-- Adj order -->
+        <div class="activity-box">
+          <h4>
+            🎨 Atividade 3 – Adjective Order (Coloque os adjetivos na ordem
+            correta)
+          </h4>
+          <p style="font-size: 14px; line-height: 2.5; color: var(--text)">
+            1. a / old / Italian / small → a
+            <input
+              class="fill-input"
+              id="c1"
+              placeholder="___ ___ ___"
+              style="width: 200px"
+            />
+            table<br />
+            2. a / wooden / heavy / round → a
+            <input
+              class="fill-input"
+              id="c2"
+              placeholder="___ ___ ___"
+              style="width: 200px"
+            />
+            box<br />
+            3. a / new / blue / beautiful → a
+            <input
+              class="fill-input"
+              id="c3"
+              placeholder="___ ___ ___"
+              style="width: 200px"
+            />
+            car
+          </p>
+          <button class="check-btn" onclick="checkActivity3()">
+            Verificar ✓
+          </button>
+          <div class="activity-result" id="res3"></div>
+        </div>
+      </section>
+
+      <!-- ======================== QUIZ ======================== -->
+      <section id="quiz">
+        <div class="section-header">
+          <div class="section-icon" style="background: #fef3c7">🎯</div>
+          <div>
+            <h2>Quiz Interativo</h2>
+            <p>Teste seus conhecimentos! Clique na resposta correta.</p>
+          </div>
+        </div>
+
+        <div id="quizContainer"></div>
+        <div class="score-display" id="scoreDisplay">
+          <div class="score-num" id="scoreNum">0/8</div>
+          <p id="scoreMsg">Você concluiu o quiz!</p>
+          <button class="btn" onclick="resetQuiz()">🔄 Tentar novamente</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <strong>Colégio Átilla Curumim</strong> · Material de apoio – English
+      Class 6º Ano<br />
+      Professor(a): Ewerton · Produzido com ❤️ para aprender inglês
+    </footer>
+
+    <script>
+      // ---- QUIZ DATA ----
+      const questions = [
+        {
+          text: "Mary is a doctor. ___ works at the local hospital.",
+          options: ["They", "It", "She", "He"],
+          correct: 2,
+          feedback:
+            "✅ Mary é feminino → usamos SHE. She works at the hospital.",
+        },
+        {
+          text: "John _____ (play) soccer every Sunday.",
+          options: ["played", "Play", "playing", "plays"],
+          correct: 3,
+          feedback: "✅ John = He → terceira pessoa → play + S = plays.",
+        },
+        {
+          text: "My parents _____ (live) in a _____ (beautiful / big) house.",
+          options: [
+            "lives / beautiful big",
+            "live / big beautiful",
+            "lives / big beautiful",
+            "live / beautiful big",
+          ],
+          correct: 3,
+          feedback:
+            "✅ Parents = They → live (sem -s). Ordem: Opinion (beautiful) → Size (big).",
+        },
+        {
+          text: "Put in order: Chinese / she / delicious / cooks / food",
+          options: [
+            "She cooks delicious Chinese food",
+            "She cooks Chinese delicious food",
+            "She delicious cooks Chinese food",
+            "Delicious she cooks Chinese food",
+          ],
+          correct: 0,
+          feedback:
+            "✅ Sujeito + Verbo + Opinion (delicious) + Origin (Chinese) + noun (food).",
+        },
+        {
+          text: "Which sentence is grammatically correct?",
+          options: [
+            "Does he like new blue cars?",
+            "Do he like new blue cars?",
+            "He like new blue cars?",
+            "Does he likes new blue cars?",
+          ],
+          correct: 0,
+          feedback:
+            "✅ He → DOES. Com DOES, o verbo principal não leva -s: Does he like (não likes).",
+        },
+        {
+          text: "We _____ (have) a _____ (old / small / Italian) table.",
+          options: [
+            "have / Italian old small",
+            "have / small old Italian",
+            "has / small old Italian",
+            "has / old small Italian",
+          ],
+          correct: 1,
+          feedback:
+            "✅ We → have. Ordem: Size (small) → Age (old) → Origin (Italian).",
+        },
+        {
+          text: "Mark _____ (not/own) that _____ (ugly / plastic / yellow) chair.",
+          options: [
+            "doesn't own / plastic yellow ugly",
+            "don't own / ugly plastic yellow",
+            "doesn't own / ugly yellow plastic",
+            "doesn't owns / yellow ugly plastic",
+          ],
+          correct: 2,
+          feedback:
+            "✅ Mark = He → doesn't own. Ordem: Opinion (ugly) → Color (yellow) → Material (plastic).",
+        },
+        {
+          text: "Which sentence has BOTH Simple Present AND Adjective Order correct?",
+          options: [
+            "My sister often carries a heavy rectangular wooden box.",
+            "My sister often carries a wooden rectangular heavy box.",
+            "My sisters often carries a heavy rectangular wooden box.",
+            "My sister often carry a wooden heavy rectangular box.",
+          ],
+          correct: 0,
+          feedback:
+            "✅ Sister (He/She) → carries ✓. Ordem: Size (heavy) → Shape (rectangular) → Material (wooden) ✓.",
+        },
+      ];
+
+      let answered = [];
+      let score = 0;
+
+      function buildQuiz() {
+        const container = document.getElementById("quizContainer");
+        container.innerHTML = "";
+        answered = new Array(questions.length).fill(false);
+        score = 0;
+        document.getElementById("scoreDisplay").style.display = "none";
+
+        questions.forEach((q, qi) => {
+          const div = document.createElement("div");
+          div.className = "quiz-question";
+          div.id = `q${qi}`;
+
+          div.innerHTML = `
+      <p class="qtext"><strong>Q${qi + 1}.</strong> ${q.text}</p>
+      <div class="options">
+        ${q.options
+          .map(
+            (opt, oi) => `
+          <div class="option" id="opt_${qi}_${oi}" onclick="selectOption(${qi}, ${oi})">
+            <span class="letter">${["A", "B", "C", "D"][oi]}</span>
+            ${opt}
+          </div>
+        `,
+          )
+          .join("")}
+      </div>
+      <div class="feedback" id="fb_${qi}"></div>
+    `;
+          container.appendChild(div);
+        });
+      }
+
+      function selectOption(qi, oi) {
+        if (answered[qi]) return;
+        answered[qi] = true;
+        const q = questions[qi];
+        const correct = q.correct === oi;
+        if (correct) score++;
+
+        // Mark options
+        q.options.forEach((_, i) => {
+          const el = document.getElementById(`opt_${qi}_${i}`);
+          if (i === q.correct) el.classList.add("correct");
+          else if (i === oi && !correct) el.classList.add("wrong");
+        });
+
+        // Show feedback
+        const fb = document.getElementById(`fb_${qi}`);
+        fb.className = `feedback ${correct ? "correct-fb" : "wrong-fb"}`;
+        fb.style.display = "block";
+        fb.textContent = correct
+          ? q.feedback
+          : `❌ Resposta incorreta. ${q.feedback}`;
+
+        // Check if all answered
+        if (answered.every(Boolean)) showScore();
+      }
+
+      function showScore() {
+        const sd = document.getElementById("scoreDisplay");
+        sd.style.display = "block";
+        document.getElementById("scoreNum").textContent =
+          `${score}/${questions.length}`;
+        const pct = (score / questions.length) * 100;
+        let msg = "";
+        if (pct === 100) msg = "🏆 Perfeito! Você dominou o conteúdo!";
+        else if (pct >= 75) msg = "🎉 Muito bem! Continue assim!";
+        else if (pct >= 50)
+          msg = "👍 Bom esforço! Revise os erros e tente de novo!";
+        else msg = "📚 Continue estudando! Você vai melhorar!";
+        document.getElementById("scoreMsg").textContent = msg;
+        sd.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      function resetQuiz() {
+        buildQuiz();
+        window.scrollTo({
+          top: document.getElementById("quiz").offsetTop - 80,
+          behavior: "smooth",
+        });
+      }
+
+      // ---- ACTIVITIES ----
+      function checkActivity1() {
+        const answers = ["He", "She", "They", "It", "It"];
+        const inputs = ["a1", "a2", "a3", "a4", "a5"];
+        let correct = 0;
+        inputs.forEach((id, i) => {
+          const val = document.getElementById(id).value.trim();
+          if (val.toLowerCase() === answers[i].toLowerCase()) correct++;
+        });
+        const res = document.getElementById("res1");
+        res.style.display = "block";
+        res.innerHTML = `<span style="color:${correct === 5 ? "var(--green)" : "var(--orange)"};font-weight:700">${correct}/5 corretas.</span> Gabarito: He / She / They / It / It`;
+      }
+
+      function checkActivity2() {
+        const answers = ["studies", "play", "goes", "have", "cooks"];
+        const inputs = ["b1", "b2", "b3", "b4", "b5"];
+        let correct = 0;
+        inputs.forEach((id, i) => {
+          const val = document.getElementById(id).value.trim();
+          if (val.toLowerCase() === answers[i].toLowerCase()) correct++;
+        });
+        const res = document.getElementById("res2");
+        res.style.display = "block";
+        res.innerHTML = `<span style="color:${correct === 5 ? "var(--green)" : "var(--orange)"};font-weight:700">${correct}/5 corretas.</span> Gabarito: studies / play / goes / have / cooks`;
+      }
+
+      function checkActivity3() {
+        const answers = [
+          "small old italian",
+          "heavy round wooden",
+          "beautiful new blue",
+        ];
+        const inputs = ["c1", "c2", "c3"];
+        let correct = 0;
+        inputs.forEach((id, i) => {
+          const val = document
+            .getElementById(id)
+            .value.trim()
+            .toLowerCase()
+            .replace(/\s+/g, " ");
+          if (val === answers[i]) correct++;
+        });
+        const res = document.getElementById("res3");
+        res.style.display = "block";
+        res.innerHTML = `<span style="color:${correct === 3 ? "var(--green)" : "var(--orange)"};font-weight:700">${correct}/3 corretas.</span><br>Gabarito: 1. small old Italian | 2. heavy round wooden | 3. beautiful new blue`;
+      }
+
+      // ---- INIT ----
+      buildQuiz();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Central de Revisões | Colégio Átilla Curumim</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #f0faf5 0%, #e5f3ec 100%);
+        min-height: 100vh;
+        color: var(--text);
+      }
+
+      :root {
+        --green: #2d9e6b;
+        --green-light: #4cc98a;
+        --green-dark: #1a6845;
+        --green-soft: #e8f5ee;
+        --yellow: #f5c518;
+        --orange: #f07b2a;
+        --blue: #3b82f6;
+        --purple: #7c3aed;
+        --red: #e74c3c;
+        --text: #1a2e22;
+        --muted: #5a7a65;
+        --card: #ffffff;
+        --border: #c8e8d5;
+      }
+
+      /* HEADER */
+      .main-header {
+        background: linear-gradient(
+          135deg,
+          var(--green-dark) 0%,
+          var(--green) 60%,
+          var(--green-light) 100%
+        );
+        color: white;
+        padding: 50px 24px 70px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      .main-header::before {
+        content: "📚";
+        position: absolute;
+        font-size: 220px;
+        opacity: 0.08;
+        bottom: -40px;
+        right: -30px;
+        pointer-events: none;
+      }
+      .school-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50px;
+        padding: 8px 24px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        backdrop-filter: blur(4px);
+      }
+      .main-header h1 {
+        font-family: "Nunito", sans-serif;
+        font-size: clamp(32px, 7vw, 56px);
+        font-weight: 900;
+        line-height: 1.2;
+      }
+      .main-header h1 span {
+        color: var(--yellow);
+      }
+      .main-header p {
+        margin-top: 16px;
+        font-size: 16px;
+        opacity: 0.9;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .header-badge {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 28px;
+      }
+      .badge-year {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 40px;
+        padding: 6px 18px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      /* MAIN CONTENT */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 24px 60px;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+      .section-title h2 {
+        font-family: "Nunito", sans-serif;
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--green-dark);
+        margin-bottom: 8px;
+      }
+      .section-title p {
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      /* CARDS DOS ANOS */
+      .years-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 32px;
+        margin-bottom: 48px;
+      }
+      .year-card {
+        background: var(--card);
+        border-radius: 32px;
+        overflow: hidden;
+        box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid var(--border);
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+        color: inherit;
+      }
+      .year-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 40px -12px rgba(45, 158, 107, 0.25);
+        border-color: var(--green);
+      }
+      .card-header {
+        padding: 32px 24px 20px;
+        text-align: center;
+        position: relative;
+      }
+      .year-number {
+        font-family: "Nunito", sans-serif;
+        font-size: 64px;
+        font-weight: 900;
+        background: linear-gradient(135deg, var(--green-dark), var(--green));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1;
+      }
+      .card-header h3 {
+        font-size: 28px;
+        font-weight: 800;
+        margin-top: 8px;
+        color: var(--text);
+      }
+      .card-icon {
+        font-size: 48px;
+        margin-bottom: 12px;
+      }
+      .card-body {
+        padding: 0 24px 24px;
+        text-align: center;
+      }
+      .card-body p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+      .card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+      }
+      .card-tag {
+        background: var(--green-soft);
+        color: var(--green-dark);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 4px 12px;
+        border-radius: 20px;
+      }
+      .status-badge {
+        display: inline-block;
+        background: var(--green);
+        color: white;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 6px 16px;
+        border-radius: 30px;
+        margin-top: 16px;
+      }
+      .status-badge.construction {
+        background: #f59e0b;
+      }
+      .status-badge.available {
+        background: var(--green);
+      }
+      .btn-access {
+        background: var(--green);
+        color: white;
+        border: none;
+        border-radius: 40px;
+        padding: 10px 28px;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.2s;
+        margin-top: 16px;
+        display: inline-block;
+      }
+      .btn-access:hover {
+        background: var(--green-dark);
+        transform: scale(1.02);
+      }
+
+      /* INFO ADICIONAL */
+      .info-box {
+        background: var(--green-soft);
+        border-radius: 24px;
+        padding: 28px;
+        text-align: center;
+        margin-top: 32px;
+        border: 1px solid var(--border);
+      }
+      .info-box h3 {
+        font-family: "Nunito", sans-serif;
+        color: var(--green-dark);
+        margin-bottom: 12px;
+      }
+      .info-box p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--green-dark);
+        color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 32px 24px;
+        margin-top: 20px;
+      }
+      footer strong {
+        color: white;
+      }
+      .teacher-credit {
+        margin-top: 12px;
+        font-size: 13px;
+        opacity: 0.8;
+      }
+
+      /* MODAL */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 1000;
+        overflow-y: auto;
+      }
+      .modal-content {
+        background: #f0faf5;
+        margin: 20px auto;
+        max-width: 1100px;
+        border-radius: 32px;
+        position: relative;
+        animation: modalSlide 0.3s ease;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+      @keyframes modalSlide {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .modal-close {
+        position: sticky;
+        top: 16px;
+        right: 24px;
+        float: right;
+        background: var(--red);
+        color: white;
+        border: none;
+        font-size: 24px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        margin: 16px 24px 0 0;
+        transition: 0.2s;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .modal-close:hover {
+        background: #c0392b;
+        transform: scale(1.05);
+      }
+      .modal-body {
+        padding: 20px 24px 40px;
+        clear: both;
+      }
+      .iframe-loader {
+        width: 100%;
+        min-height: 85vh;
+        border: none;
+        border-radius: 24px;
+        background: white;
+      }
+      .construction-modal {
+        text-align: center;
+        padding: 60px 30px;
+      }
+      .construction-modal h2 {
+        font-size: 32px;
+        color: var(--green-dark);
+        margin-bottom: 16px;
+      }
+      .construction-modal p {
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+      .construction-icon {
+        font-size: 80px;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .modal-content {
+          margin: 10px;
+          width: calc(100% - 20px);
+        }
+        .modal-close {
+          top: 8px;
+          right: 8px;
+          margin: 8px 12px 0 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="school-logo">🏫 Colégio Átilla Curumim</div>
+      <h1>Central de Revisões<br /><span>Bimestral</span></h1>
+      <p>
+        Escolha seu ano e revise os conteúdos mais importantes para arrasar na
+        prova!
+      </p>
+      <div class="header-badge">
+        <span class="badge-year">📘 6º Ano</span>
+        <span class="badge-year">📙 7º Ano</span>
+        <span class="badge-year">📗 8º Ano</span>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="section-title">
+        <h2>📚 Selecione seu ano</h2>
+        <p>
+          Material completo preparado pelo Teacher Erick para revisão bimestral
+        </p>
+      </div>
+
+      <div class="years-grid">
+        <!-- 6º ANO -->
+        <div class="year-card" onclick="openGradeModal(6)">
+          <div class="card-header">
+            <div class="card-icon">📘</div>
+            <div class="year-number">6º</div>
+            <h3>Ensino Fundamental</h3>
+          </div>
+          <div class="card-body">
+            <p>
+              Pronomes pessoais · Simple Present · Ordem dos adjetivos ·
+              Vocabulário básico
+            </p>
+            <div class="card-tags">
+              <span class="card-tag">👤 Pronouns</span>
+              <span class="card-tag">⏱️ Simple Present</span>
+              <span class="card-tag">🎨 Adjectives</span>
+            </div>
+            <div class="status-badge available">✅ Disponível</div>
+            <div class="btn-access">Acessar revisão →</div>
+          </div>
+        </div>
+
+        <!-- 7º ANO -->
+        <div class="year-card" onclick="openGradeModal(7)">
+          <div class="card-header">
+            <div class="card-icon">📙</div>
+            <div class="year-number">7º</div>
+            <h3>Ensino Fundamental</h3>
+          </div>
+          <div class="card-body">
+            <p>
+              Past Continuous · Simple Past X Past Continuous · Quantifiers ·
+              Modal Verbs (Can/Could)
+            </p>
+            <div class="card-tags">
+              <span class="card-tag">⏪ Past Continuous</span>
+              <span class="card-tag">🔢 Quantifiers</span>
+              <span class="card-tag">⚡ Modal Verbs</span>
+            </div>
+            <div class="status-badge available">✅ Disponível</div>
+            <div class="btn-access">Acessar revisão →</div>
+          </div>
+        </div>
+
+        <!-- 8º ANO -->
+        <div class="year-card" onclick="openGradeModal(8)">
+          <div class="card-header">
+            <div class="card-icon">📗</div>
+            <div class="year-number">8º</div>
+            <h3>Ensino Fundamental</h3>
+          </div>
+          <div class="card-body">
+            <p>
+              Comparatives · Superlatives · Adjetivos curtos e longos · Regras e
+              irregulares
+            </p>
+            <div class="card-tags">
+              <span class="card-tag">📊 Comparative</span>
+              <span class="card-tag">🏆 Superlative</span>
+              <span class="card-tag">📝 Quiz + Atividades</span>
+            </div>
+            <div class="status-badge available">✅ Disponível</div>
+            <div class="btn-access">Acessar revisão →</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <h3>🎯 Como usar a central de revisões?</h3>
+        <p>
+          Clique no card do seu ano e acesse o material completo com
+          explicações, exercícios, quiz interativo e muito mais. Todos os anos
+          já estão disponíveis com revisões completas para a prova bimestral!
+        </p>
+        <p style="margin-top: 12px">
+          <strong>Teacher Erick</strong> preparou cada detalhe para você
+          arrasar! 💚
+        </p>
+        <p style="margin-top: 8px; font-size: 13px">
+          📁 Arquivos necessários: <strong>6ano.html</strong> ·
+          <strong>7ano.html</strong> · <strong>8ano.html</strong> (na mesma
+          pasta)
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <strong>Colégio Átilla Curumim</strong> – Central de Revisões
+      Bimestrais<br />
+      Material exclusivo preparado por <strong>Teacher Erick</strong> · Estude
+      com dedicação e sucesso!
+      <div class="teacher-credit">
+        ✨ Gramática · Vocabulário · Prática interativa ✨
+      </div>
+    </footer>
+
+    <!-- MODAL DINÂMICO PARA TODOS OS ANOS -->
+    <div id="gradeModal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <div class="modal-body">
+          <iframe id="gradeFrame" class="iframe-loader" src=""></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Função para abrir o modal com o arquivo correto baseado no ano
+      function openGradeModal(grade) {
+        const modal = document.getElementById("gradeModal");
+        const frame = document.getElementById("gradeFrame");
+
+        // Define o arquivo HTML conforme o ano
+        let file = "";
+        switch (grade) {
+          case 6:
+            file = "6ano.html";
+            break;
+          case 7:
+            file = "7ano.html";
+            break;
+          case 8:
+            file = "8ano.html";
+            break;
+          default:
+            file = "";
+        }
+
+        // Se o arquivo existir, carrega no iframe
+        if (file) {
+          frame.src = file;
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden";
+        } else {
+          alert(
+            "Arquivo não encontrado. Verifique se o arquivo " +
+              file +
+              " está na mesma pasta.",
+          );
+        }
+      }
+
+      // Função para fechar o modal
+      function closeModal() {
+        const modal = document.getElementById("gradeModal");
+        const frame = document.getElementById("gradeFrame");
+        modal.style.display = "none";
+        frame.src = ""; // Limpa o src para não ficar carregado em segundo plano
+        document.body.style.overflow = "auto";
+      }
+
+      // Fechar ao clicar fora do modal
+      window.onclick = function (event) {
+        const modal = document.getElementById("gradeModal");
+        if (event.target === modal) {
+          closeModal();
+        }
+      };
+
+      // Expor funções globalmente
+      window.openGradeModal = openGradeModal;
+      window.closeModal = closeModal;
+    </script>
+  </body>
+</html>
