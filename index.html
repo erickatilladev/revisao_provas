@@ -447,13 +447,13 @@
           </div>
           <div class="card-body">
             <p>
-              Comparatives · Superlatives · Adjetivos curtos e longos · Regras e
-              irregulares
+              Comparatives · Superlatives · Family · Possessives · Genitive ('s)
             </p>
             <div class="card-tags">
               <span class="card-tag">📊 Comparative</span>
               <span class="card-tag">🏆 Superlative</span>
-              <span class="card-tag">📝 Quiz + Atividades</span>
+              <span class="card-tag">👨‍👩‍👧 Family</span>
+              <span class="card-tag">🔑 Possessives</span>
             </div>
             <div class="status-badge available">✅ Disponível</div>
             <div class="btn-access">Acessar revisão →</div>
@@ -473,9 +473,12 @@
           arrasar! 💚
         </p>
         <p style="margin-top: 8px; font-size: 13px">
-          📁 Arquivos necessários: <strong>6ano.html</strong> ·
-          <strong>7ano.html</strong> · <strong>8ano.html</strong> (na mesma
-          pasta)
+          📁 Estrutura de arquivos:<br />
+          <strong>6ano.html</strong> · <strong>7ano.html</strong> ·
+          <strong>8ano/index.html</strong> (container com abas)<br />
+          📂 <strong>8ano/aula1.html</strong> ·
+          <strong>8ano/aula2.html</strong> · <strong>8ano/aula3.html</strong> ·
+          <strong>8ano/aula4.html</strong>
         </p>
       </div>
     </div>
@@ -516,7 +519,8 @@
             file = "7ano.html";
             break;
           case 8:
-            file = "8ano.html";
+            // 8º ano agora é uma PASTA com um index.html que tem as abas das aulas
+            file = "8ano/index.html";
             break;
           default:
             file = "";
@@ -529,9 +533,9 @@
           document.body.style.overflow = "hidden";
         } else {
           alert(
-            "Arquivo não encontrado. Verifique se o arquivo " +
+            "Arquivo não encontrado. Verifique se a pasta/arquivo " +
               file +
-              " está na mesma pasta.",
+              " existe.",
           );
         }
       }

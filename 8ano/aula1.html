@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revisão para Prova Bimestral | 8º Ano | Teacher Erick</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --green: #2d9e6b;
+        --green-light: #4cc98a;
+        --green-dark: #1a6845;
+        --green-soft: #e8f5ee;
+        --yellow: #f5c518;
+        --orange: #f07b2a;
+        --red: #e74c3c;
+        --bg: #f0faf5;
+        --card: #ffffff;
+        --text: #1a2e22;
+        --muted: #5a7a65;
+        --border: #c8e8d5;
+        --gray-bg: #f5f5f5;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+      }
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--green-dark) 0%,
+          var(--green) 60%,
+          var(--green-light) 100%
+        );
+        color: white;
+        padding: 40px 24px 60px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      header::before {
+        content: "📚";
+        position: absolute;
+        font-size: 180px;
+        opacity: 0.08;
+        bottom: -30px;
+        right: -20px;
+        pointer-events: none;
+      }
+      .school-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50px;
+        padding: 6px 20px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      header h1 {
+        font-family: "Nunito", sans-serif;
+        font-size: clamp(28px, 6vw, 48px);
+        font-weight: 900;
+      }
+      header h1 span {
+        color: var(--yellow);
+      }
+      header p.subtitle {
+        margin-top: 12px;
+        font-size: 15px;
+        opacity: 0.9;
+      }
+      .header-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        margin-top: 24px;
+      }
+      .tag {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 40px;
+        padding: 5px 14px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      main {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 32px 20px 60px;
+      }
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+      .section-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        background: var(--green-soft);
+        flex-shrink: 0;
+      }
+      .section-header h2 {
+        font-family: "Nunito", sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        color: var(--green-dark);
+      }
+      .card {
+        background: var(--card);
+        border-radius: 24px;
+        border: 1.5px solid var(--border);
+        padding: 24px;
+        margin-bottom: 20px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
+      }
+      .rule-box {
+        background: var(--green-soft);
+        border-left: 6px solid var(--green);
+        border-radius: 18px;
+        padding: 18px 22px;
+        margin: 16px 0;
+      }
+      .example {
+        background: #fef9e6;
+        border-radius: 14px;
+        padding: 12px 18px;
+        margin: 12px 0;
+        font-size: 14px;
+        border-left: 3px solid var(--yellow);
+      }
+      .grammar-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+      .grammar-card {
+        background: white;
+        border-radius: 20px;
+        padding: 20px;
+        border: 1.5px solid var(--border);
+        transition: 0.2s;
+      }
+      .grammar-card h3 {
+        font-size: 20px;
+        font-weight: 800;
+        font-family: "Nunito", sans-serif;
+        color: var(--green-dark);
+        margin-bottom: 12px;
+      }
+      .badge {
+        background: var(--green);
+        color: white;
+        font-size: 12px;
+        border-radius: 30px;
+        padding: 4px 12px;
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+      .irregular-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+      }
+      .irregular-table td,
+      .irregular-table th {
+        border: 1px solid var(--border);
+        padding: 10px;
+        text-align: left;
+      }
+      .irregular-table th {
+        background: var(--green);
+        color: white;
+      }
+      .fill-input {
+        border: none;
+        border-bottom: 2px solid var(--green);
+        background: transparent;
+        width: 200px;
+        text-align: left;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        outline: none;
+        padding: 4px 6px;
+        margin: 8px 0;
+      }
+      .fill-input:focus {
+        border-bottom-color: var(--green-light);
+      }
+      .check-btn {
+        background: var(--green);
+        color: white;
+        border: none;
+        border-radius: 40px;
+        padding: 10px 28px;
+        font-weight: 700;
+        margin-top: 16px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .check-btn:hover {
+        background: var(--green-dark);
+        transform: scale(0.98);
+      }
+      .activity-result {
+        margin-top: 14px;
+        padding: 12px;
+        background: var(--green-soft);
+        border-radius: 14px;
+        font-size: 13px;
+        display: none;
+      }
+      .tip-didatic {
+        background: #fff8e1;
+        border-radius: 16px;
+        padding: 14px 18px;
+        margin: 12px 0;
+        border-left: 5px solid var(--yellow);
+      }
+      .vocab-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 16px;
+        margin: 20px 0;
+      }
+      .vocab-item {
+        background: white;
+        border-radius: 18px;
+        padding: 18px 12px;
+        cursor: pointer;
+        border: 2px solid var(--border);
+        text-align: center;
+        transition: all 0.2s ease;
+      }
+      .vocab-item:hover {
+        border-color: var(--green);
+        transform: translateY(-3px);
+      }
+      .vocab-item .word {
+        font-weight: 800;
+        font-size: 18px;
+        color: var(--green-dark);
+      }
+      .vocab-item .translation {
+        display: none;
+        font-size: 14px;
+        color: var(--green);
+        margin-top: 12px;
+        padding-top: 8px;
+        border-top: 1px dashed var(--border);
+      }
+      .vocab-item.revealed .translation {
+        display: block;
+      }
+      .vocab-item .click-hint {
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 10px;
+      }
+      footer {
+        background: var(--green-dark);
+        color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 28px;
+        font-size: 13px;
+      }
+      .highlight-green {
+        color: var(--green);
+        font-weight: 700;
+      }
+      .quiz-question {
+        background: white;
+        border: 1.5px solid var(--border);
+        border-radius: 24px;
+        padding: 22px;
+        margin-bottom: 20px;
+      }
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .option {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 12px 18px;
+        border: 1.5px solid var(--border);
+        border-radius: 16px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .option:hover {
+        border-color: var(--green);
+        background: var(--green-soft);
+      }
+      .option.correct {
+        border-color: var(--green);
+        background: #e1f3e9;
+      }
+      .option.wrong {
+        border-color: var(--red);
+        background: #ffe6e0;
+      }
+      .feedback {
+        display: none;
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 14px;
+      }
+      .correct-fb {
+        background: #e1f3e9;
+        color: var(--green-dark);
+        border-left: 4px solid var(--green);
+      }
+      .wrong-fb {
+        background: #ffe6e0;
+        color: #b14320;
+        border-left: 4px solid var(--red);
+      }
+      .score-display {
+        background: linear-gradient(135deg, var(--green-dark), var(--green));
+        color: white;
+        border-radius: 28px;
+        padding: 30px;
+        text-align: center;
+        margin-top: 28px;
+        display: none;
+      }
+      .btn {
+        background: var(--yellow);
+        color: var(--green-dark);
+        border: none;
+        border-radius: 40px;
+        padding: 12px 28px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .teacher-credit {
+        font-size: 14px;
+        margin-top: 40px;
+        text-align: center;
+        color: var(--green-dark);
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="school-badge">
+        🏫 Colégio Átilla Curumim &nbsp;|&nbsp; 8º Ano &nbsp;|&nbsp; Revisão
+        Bimestral
+      </div>
+      <h1>Review for the Exam<br /><span>Comparatives & Superlatives</span></h1>
+      <p class="subtitle">
+        Domine as regras, pratique e arrase na prova bimestral!
+      </p>
+      <div class="header-tags">
+        <span class="tag">📊 Comparative</span>
+        <span class="tag">🏆 Superlative</span>
+        <span class="tag">📝 Exercícios</span>
+        <span class="tag">🎯 Quiz</span>
+        <span class="tag">💡 Dicas</span>
+      </div>
+    </header>
+
+    <main>
+      <!-- COMPARATIVES AND SUPERLATIVES -->
+      <div>
+        <div class="section-header">
+          <div class="section-icon">📊</div>
+          <div>
+            <h2>Comparatives & Superlatives</h2>
+            <p>Como comparar duas coisas e destacar uma no grupo</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="color: var(--green-dark); font-size: 22px">
+            🔍 O que é COMPARATIVE? (Comparativo)
+          </h3>
+          <p>
+            Usamos o comparative quando queremos
+            <strong class="highlight-green"
+              >comparar duas pessoas ou coisas</strong
+            >.
+          </p>
+          <div class="example">
+            📌 Em português: "mais... que" / "menos... que"<br />👉 João é
+            <strong>mais alto que</strong> Pedro.<br />👉 Matemática é
+            <strong>mais difícil que</strong> inglês.
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="color: var(--green-dark); font-size: 22px">
+            🏆 O que é SUPERLATIVE? (Superlativo)
+          </h3>
+          <p>
+            Usamos o superlative quando queremos
+            <strong class="highlight-green"
+              >destacar uma pessoa ou coisa dentro de um grupo</strong
+            >.
+          </p>
+          <div class="example">
+            📌 Em português: "o mais..." / "o menos..."<br />👉 João é
+            <strong>o mais alto</strong> da sala.<br />👉 Essa é
+            <strong>a matéria mais fácil</strong>.
+          </div>
+        </div>
+
+        <div class="grammar-grid">
+          <div class="grammar-card">
+            <span class="badge">📏 Comparative com -ER</span>
+            <h3>Adjetivos curtos (1 sílaba)</h3>
+            <p><strong>Estrutura:</strong> <code>adjetivo + ER + THAN</code></p>
+            <div class="example">
+              tall → taller than<br />fast → faster than<br />small → smaller
+              than
+            </div>
+            <p>
+              <em>John is taller than Pedro.</em><br /><em
+                >This car is faster than that one.</em
+              >
+            </p>
+          </div>
+          <div class="grammar-card">
+            <span class="badge">📏 Comparative com MORE</span>
+            <h3>Adjetivos longos (2+ sílabas)</h3>
+            <p>
+              <strong>Estrutura:</strong> <code>MORE + adjetivo + THAN</code>
+            </p>
+            <div class="example">
+              beautiful → more beautiful than<br />expensive → more expensive
+              than<br />difficult → more difficult than
+            </div>
+            <p>
+              <em>This test is more difficult than the last one.</em><br /><em
+                >This phone is more expensive than that one.</em
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="grammar-grid">
+          <div class="grammar-card">
+            <span class="badge">🥇 Superlative com -EST</span>
+            <h3>Adjetivos curtos</h3>
+            <p><strong>Estrutura:</strong> <code>THE + adjetivo + EST</code></p>
+            <div class="example">
+              tall → the tallest<br />fast → the fastest<br />small → the
+              smallest
+            </div>
+            <p>
+              <em>John is the tallest in the class.</em><br /><em
+                >This is the fastest car.</em
+              >
+            </p>
+          </div>
+          <div class="grammar-card">
+            <span class="badge">🥇 Superlative com THE MOST</span>
+            <h3>Adjetivos longos</h3>
+            <p><strong>Estrutura:</strong> <code>THE MOST + adjetivo</code></p>
+            <div class="example">
+              beautiful → the most beautiful<br />expensive → the most
+              expensive<br />difficult → the most difficult
+            </div>
+            <p>
+              <em>She is the most beautiful girl.</em><br /><em
+                >This is the most difficult test.</em
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="rule-box">
+          <strong>⚠️ REGRAS IMPORTANTES</strong><br />
+          ✅ Adjetivos curtos (1 sílaba): <strong>-er / -est</strong><br />
+          ✅ Adjetivos longos (2+ sílabas): <strong>more / the most</strong
+          ><br />
+          🔥 <strong>IRREGULARES (DECORE!)</strong>
+          <table class="irregular-table">
+            <tr>
+              <th>Adjetivo</th>
+              <th>Comparative</th>
+              <th>Superlative</th>
+            </tr>
+            <tr>
+              <td>good</td>
+              <td>better</td>
+              <td>the best</td>
+            </tr>
+            <tr>
+              <td>bad</td>
+              <td>worse</td>
+              <td>the worst</td>
+            </tr>
+            <tr>
+              <td>far</td>
+              <td>farther / further</td>
+              <td>the farthest / the furthest</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- VOCABULÁRIO ALINHADO COM O TEMA -->
+        <div class="section-header" style="margin-top: 24px">
+          <div class="section-icon">📖</div>
+          <div>
+            <h2>Vocabulary - Adjectives for Comparisons</h2>
+            <p>Clique nos cards para ver a tradução</p>
+          </div>
+        </div>
+        <div class="vocab-grid">
+          <div class="vocab-item">
+            <div class="word">tall</div>
+            <div class="translation">alto(a)</div>
+            <div class="click-hint">🔍 clique</div>
+          </div>
+          <div class="vocab-item">
+            <div class="word">short</div>
+            <div class="translation">baixo(a) / curto(a)</div>
+            <div class="click-hint">🔍 clique</div>
+          </div>
+          <div class="vocab-item">
+            <div class="word">fast</div>
+            <div class="translation">rápido(a)</div>
+            <div class="click-hint">🔍 clique</div>
+          </div>
+          <div class="vocab-item">
+            <div class="word">slow</div>
+            <div class="translation">lento(a)</div>
+            <div class="click-hint">🔍 clique</div>
+          </div>
+          <div class="vocab-item">
+            <div class="word">big</div>
+            <div class="translation">grande</div>
+            <div class="click-hint">🔍 clique</div>
+          </div>
+          <div class="vocab-item">
+            <div class="word">small</div>
+            <div class="translation">pequeno(a)</div>
+            <div class="click-hint">🔍 clique</div>
+          </div>
+          <div class="vocab-item">
+            <div class="word">beautiful</div>
+            <div class="translation">bonito(a)</div>
+            <div class="click-hint">🔍 clique</div>
+          </div>
+          <div class="vocab-item">
+            <div class="word">expensive</div>
+            <div class="translation">caro(a)</div>
+            <div class="click-hint">🔍 clique</div>
+          </div>
+          <div class="vocab-item">
+            <div class="word">cheap</div>
+            <div class="translation">barato(a)</div>
+            <div class="click-hint">🔍 clique</div>
+          </div>
+          <div class="vocab-item">
+            <div class="word">difficult</div>
+            <div class="translation">difícil</div>
+            <div class="click-hint">🔍 clique</div>
+          </div>
+          <div class="vocab-item">
+            <div class="word">easy</div>
+            <div class="translation">fácil</div>
+            <div class="click-hint">🔍 clique</div>
+          </div>
+          <div class="vocab-item">
+            <div class="word">good</div>
+            <div class="translation">bom</div>
+            <div class="click-hint">🔍 clique</div>
+          </div>
+          <div class="vocab-item">
+            <div class="word">bad</div>
+            <div class="translation">ruim</div>
+            <div class="click-hint">🔍 clique</div>
+          </div>
+        </div>
+
+        <!-- ATIVIDADES -->
+        <div class="card">
+          <h3>✏️ Activity 1 – Complete com a forma correta</h3>
+          <p>
+            1. This car is __________ (fast) than that one.<br /><input
+              class="fill-input"
+              id="comp1"
+              placeholder="sua resposta"
+            />
+          </p>
+          <p>
+            2. She is the __________ (good) student in the class.<br /><input
+              class="fill-input"
+              id="comp2"
+              placeholder="sua resposta"
+            />
+          </p>
+          <p>
+            3. Math is __________ (easy) than history.<br /><input
+              class="fill-input"
+              id="comp3"
+              placeholder="sua resposta"
+            />
+          </p>
+          <p>
+            4. This is the __________ (expensive) phone in the store.<br /><input
+              class="fill-input"
+              id="comp4"
+              placeholder="sua resposta"
+            />
+          </p>
+          <p>
+            5. John is __________ (tall) than Pedro.<br /><input
+              class="fill-input"
+              id="comp5"
+              placeholder="sua resposta"
+            />
+          </p>
+          <button class="check-btn" onclick="checkActivityComp()">
+            Verificar ✓
+          </button>
+          <div id="compResult" class="activity-result"></div>
+        </div>
+
+        <div class="card">
+          <h3>✏️ Activity 2 – Transforme as frases</h3>
+          <p>
+            1. João is tall → João is __________ than Pedro.<br /><input
+              class="fill-input"
+              id="trans1"
+              placeholder="sua resposta"
+            />
+          </p>
+          <p>
+            2. This test is difficult → This is the __________ test.<br /><input
+              class="fill-input"
+              id="trans2"
+              placeholder="sua resposta"
+            />
+          </p>
+          <p>
+            3. My house is big → My house is __________ than yours.<br /><input
+              class="fill-input"
+              id="trans3"
+              placeholder="sua resposta"
+            />
+          </p>
+          <button class="check-btn" onclick="checkTransform()">
+            Verificar ✓
+          </button>
+          <div id="transResult" class="activity-result"></div>
+        </div>
+
+        <div class="card">
+          <h3>📝 Activity 3 – Produção livre</h3>
+          <p>
+            🔹 Escreva 1 frase comparando duas pessoas (use comparative):<br />
+            <input
+              class="fill-input"
+              id="prod1"
+              placeholder="Ex: My brother is taller than me"
+              style="width: 100%"
+            />
+          </p>
+          <p>
+            🔹 Escreva 1 frase com superlative (destaque algo):<br />
+            <input
+              class="fill-input"
+              id="prod2"
+              placeholder="Ex: She is the smartest"
+              style="width: 100%"
+            />
+          </p>
+          <button class="check-btn" onclick="checkProduction()">
+            Verificar frases
+          </button>
+          <div id="prodResult" class="activity-result"></div>
+        </div>
+
+        <!-- QUIZ -->
+        <div class="section-header" style="margin-top: 20px">
+          <div class="section-icon">🎯</div>
+          <div>
+            <h2>Quiz – Teste seus conhecimentos</h2>
+            <p>Escolha a alternativa correta. Boa sorte!</p>
+          </div>
+        </div>
+        <div id="quizContainerComp"></div>
+        <div id="scoreDisplayComp" class="score-display">
+          <div class="score-num" id="scoreNumComp">0/6</div>
+          <p id="scoreMsgComp">Você completou o quiz!</p>
+          <button class="btn" onclick="resetQuizComp()">
+            🔄 Tentar novamente
+          </button>
+        </div>
+
+        <div class="teacher-credit">
+          ✨ Material preparado com dedicação por
+          <strong>Teacher Erick</strong> – Colégio Átilla Curumim ✨
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <strong>Colégio Átilla Curumim</strong> – 8º Ano · Revisão Bimestral<br />
+      Teacher Erick · Comparatives & Superlatives · Estude com foco e arrase na
+      prova!
+    </footer>
+
+    <script>
+      // VOCABULÁRIO CLICÁVEL
+      document.querySelectorAll(".vocab-item").forEach((card) => {
+        card.addEventListener("click", function (e) {
+          e.stopPropagation();
+          this.classList.toggle("revealed");
+        });
+      });
+
+      // ATIVIDADES
+      function checkActivityComp() {
+        const answers = [
+          "faster",
+          "best",
+          "easier",
+          "most expensive",
+          "taller",
+        ];
+        let correct = 0;
+        for (let i = 1; i <= 5; i++) {
+          let val = document
+            .getElementById(`comp${i}`)
+            .value.trim()
+            .toLowerCase();
+          if (val === answers[i - 1]) correct++;
+        }
+        const resDiv = document.getElementById("compResult");
+        resDiv.style.display = "block";
+        resDiv.innerHTML = `<strong>${correct}/5 acertos.</strong> ${correct === 5 ? "Parabéns! 🎉" : "Revise as regras e tente novamente."}<br>✅ Gabarito: faster / best / easier / most expensive / taller`;
+      }
+
+      function checkTransform() {
+        const ans = ["taller", "most difficult", "bigger"];
+        let ok = 0;
+        for (let i = 1; i <= 3; i++) {
+          let val = document
+            .getElementById(`trans${i}`)
+            .value.trim()
+            .toLowerCase();
+          if (val === ans[i - 1]) ok++;
+        }
+        const res = document.getElementById("transResult");
+        res.style.display = "block";
+        res.innerHTML = `<strong>${ok}/3 corretas.</strong> ${ok === 3 ? "Ótimo! ✨" : "Revise: taller / most difficult / bigger"}`;
+      }
+
+      function checkProduction() {
+        const frase1 = document.getElementById("prod1").value.trim();
+        const frase2 = document.getElementById("prod2").value.trim();
+        const res = document.getElementById("prodResult");
+        res.style.display = "block";
+        if (frase1 && frase2) {
+          res.innerHTML = `✅ Suas frases:<br>📌 "${frase1}"<br>📌 "${frase2}"<br>🎯 Continue praticando, Teacher Erick está de olho!`;
+        } else {
+          res.innerHTML = `⚠️ Preencha as duas frases para praticar! Use comparative e superlative.`;
+        }
+      }
+
+      window.checkActivityComp = checkActivityComp;
+      window.checkTransform = checkTransform;
+      window.checkProduction = checkProduction;
+
+      // QUIZ
+      const quizCompQuestions = [
+        {
+          text: "Which sentence is CORRECT (comparative)?",
+          options: [
+            "She is more tall than me.",
+            "She is taller than me.",
+            "She is the tallest than me.",
+            "She is more taller than me.",
+          ],
+          correct: 1,
+          feedback:
+            "✅ Adjetivos curtos: adicionamos -ER + THAN. 'taller than' é a forma correta.",
+        },
+        {
+          text: "Complete: This is __________ (beautiful) dress in the store.",
+          options: [
+            "beautifuler",
+            "more beautiful",
+            "the most beautiful",
+            "the beautifullest",
+          ],
+          correct: 2,
+          feedback:
+            "✅ Adjetivos longos (2+ sílabas) usam 'the most' no superlativo.",
+        },
+        {
+          text: "What is the superlative of 'good'?",
+          options: ["gooder", "the best", "the goodest", "better"],
+          correct: 1,
+          feedback:
+            "✅ Irregular: good → better (comparative) → the best (superlative). Decore!",
+        },
+        {
+          text: "My car is ___________ (fast) than yours.",
+          options: ["fastest", "more fast", "faster", "the fastest"],
+          correct: 2,
+          feedback: "✅ fast (1 sílaba) → faster than.",
+        },
+        {
+          text: "He is ___________ (intelligent) student in the school.",
+          options: [
+            "the more intelligent",
+            "the most intelligent",
+            "intelligenter",
+            "more intelligent than",
+          ],
+          correct: 1,
+          feedback: "✅ intelligent (longo) → the most intelligent.",
+        },
+        {
+          text: "Choose the correct IRREGULAR comparative form of 'bad':",
+          options: ["badder", "more bad", "worse", "the worst"],
+          correct: 2,
+          feedback: "✅ bad → worse (comparative) / the worst (superlative).",
+        },
+      ];
+      let answeredComp = new Array(6).fill(false);
+      let scoreComp = 0;
+
+      function buildQuizComp() {
+        const container = document.getElementById("quizContainerComp");
+        if (!container) return;
+        container.innerHTML = "";
+        answeredComp = new Array(6).fill(false);
+        scoreComp = 0;
+        document.getElementById("scoreDisplayComp").style.display = "none";
+        quizCompQuestions.forEach((q, idx) => {
+          const div = document.createElement("div");
+          div.className = "quiz-question";
+          div.id = `qcomp_${idx}`;
+          div.innerHTML = `
+          <p class="qtext"><strong>${idx + 1}.</strong> ${q.text}</p>
+          <div class="options">
+            ${q.options.map((opt, oi) => `<div class="option" id="optcomp_${idx}_${oi}" onclick="selectOptionComp(${idx}, ${oi})"><span class="letter">${String.fromCharCode(65 + oi)}</span> ${opt}</div>`).join("")}
+          </div>
+          <div class="feedback" id="fbcomp_${idx}"></div>
+        `;
+          container.appendChild(div);
+        });
+      }
+
+      window.selectOptionComp = function (qi, oi) {
+        if (answeredComp[qi]) return;
+        answeredComp[qi] = true;
+        const q = quizCompQuestions[qi];
+        const isCorrect = q.correct === oi;
+        if (isCorrect) scoreComp++;
+        for (let i = 0; i < q.options.length; i++) {
+          const optEl = document.getElementById(`optcomp_${qi}_${i}`);
+          if (i === q.correct) optEl.classList.add("correct");
+          else if (i === oi && !isCorrect) optEl.classList.add("wrong");
+        }
+        const fbDiv = document.getElementById(`fbcomp_${qi}`);
+        fbDiv.className = `feedback ${isCorrect ? "correct-fb" : "wrong-fb"}`;
+        fbDiv.style.display = "block";
+        fbDiv.textContent = isCorrect
+          ? q.feedback
+          : `❌ Incorreto. ${q.feedback}`;
+        if (answeredComp.every((v) => v === true)) showScoreComp();
+      };
+
+      function showScoreComp() {
+        const sd = document.getElementById("scoreDisplayComp");
+        sd.style.display = "block";
+        document.getElementById("scoreNumComp").innerText =
+          `${scoreComp}/${quizCompQuestions.length}`;
+        let msg = "";
+        const pct = (scoreComp / quizCompQuestions.length) * 100;
+        if (pct === 100)
+          msg =
+            "🏆 Perfeito! Você domina comparatives e superlatives! Parabéns!";
+        else if (pct >= 70)
+          msg = "👍 Muito bem! Revise os erros e fique ainda mais forte!";
+        else
+          msg =
+            "📚 Continue praticando! Reveja as regras de -er / more e os irregulares.";
+        document.getElementById("scoreMsgComp").innerText = msg;
+        sd.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      window.resetQuizComp = function () {
+        buildQuizComp();
+      };
+      buildQuizComp();
+    </script>
+  </body>
+</html>

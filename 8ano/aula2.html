@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      8º Ano | Aula 2 – Family + Possessives + Genitive | Teacher Erick
+    </title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f0faf5;
+        color: #1a2e22;
+        padding: 0 0 40px;
+      }
+
+      :root {
+        --green: #2d9e6b;
+        --green-light: #4cc98a;
+        --green-dark: #1a6845;
+        --green-soft: #e8f5ee;
+        --yellow: #f5c518;
+        --orange: #f07b2a;
+        --red: #e74c3c;
+        --border: #c8e8d5;
+        --muted: #5a7a65;
+      }
+
+      .content-wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 24px 20px;
+      }
+
+      /* HEADER */
+      .lesson-header {
+        background: linear-gradient(
+          135deg,
+          var(--green-dark) 0%,
+          var(--green) 60%,
+          var(--green-light) 100%
+        );
+        color: white;
+        padding: 32px 24px;
+        border-radius: 32px;
+        margin-bottom: 32px;
+        text-align: center;
+      }
+      .lesson-header h1 {
+        font-family: "Nunito", sans-serif;
+        font-size: 32px;
+        font-weight: 900;
+      }
+      .lesson-header h1 span {
+        color: var(--yellow);
+      }
+      .lesson-header p {
+        margin-top: 8px;
+        opacity: 0.9;
+      }
+      .back-home {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 40px;
+        padding: 6px 18px;
+        font-size: 13px;
+        margin-top: 16px;
+        text-decoration: none;
+        color: white;
+      }
+      .back-home:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      /* SECTION HEADER */
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin: 32px 0 20px;
+      }
+      .section-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 18px;
+        background: var(--green-soft);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        flex-shrink: 0;
+      }
+      .section-header h2 {
+        font-family: "Nunito", sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        color: var(--green-dark);
+      }
+      .section-header p {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* CARDS */
+      .card {
+        background: white;
+        border-radius: 24px;
+        border: 1.5px solid var(--border);
+        padding: 24px;
+        margin-bottom: 20px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
+      }
+
+      .rule-box {
+        background: var(--green-soft);
+        border-left: 6px solid var(--green);
+        border-radius: 18px;
+        padding: 18px 22px;
+        margin: 16px 0;
+      }
+
+      .example {
+        background: #fef9e6;
+        border-radius: 14px;
+        padding: 12px 18px;
+        margin: 12px 0;
+        font-size: 14px;
+        border-left: 3px solid var(--yellow);
+      }
+
+      .warning-box {
+        background: #ffe6e0;
+        border-left: 6px solid var(--red);
+        border-radius: 18px;
+        padding: 16px 20px;
+        margin: 16px 0;
+      }
+      .warning-box strong {
+        color: var(--red);
+      }
+
+      /* FAMILY GRID */
+      .family-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+        margin: 20px 0;
+      }
+      .family-card {
+        background: white;
+        border-radius: 16px;
+        padding: 14px;
+        text-align: center;
+        border: 1.5px solid var(--border);
+        transition: 0.2s;
+      }
+      .family-card:hover {
+        border-color: var(--green);
+        transform: translateY(-2px);
+      }
+      .family-card .en {
+        font-weight: 800;
+        font-size: 18px;
+        color: var(--green-dark);
+      }
+      .family-card .pt {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+
+      /* POSSESSIVES TABLE */
+      .poss-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+      }
+      .poss-table th,
+      .poss-table td {
+        border: 1px solid var(--border);
+        padding: 12px;
+        text-align: left;
+      }
+      .poss-table th {
+        background: var(--green);
+        color: white;
+        font-weight: 700;
+      }
+      .poss-table tr:nth-child(even) {
+        background: var(--green-soft);
+      }
+
+      /* GENITIVE EXAMPLES */
+      .genitive-ex {
+        background: var(--green-soft);
+        padding: 14px;
+        border-radius: 14px;
+        margin: 12px 0;
+      }
+
+      /* VOCABULARY */
+      .vocab-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 12px;
+        margin: 16px 0;
+      }
+      .vocab-item {
+        background: white;
+        border-radius: 16px;
+        padding: 14px;
+        cursor: pointer;
+        border: 1.5px solid var(--border);
+        text-align: center;
+        transition: 0.2s;
+      }
+      .vocab-item:hover {
+        border-color: var(--green);
+        transform: translateY(-2px);
+      }
+      .vocab-item .word {
+        font-weight: 800;
+        font-size: 16px;
+        color: var(--green-dark);
+      }
+      .vocab-item .translation {
+        display: none;
+        font-size: 13px;
+        color: var(--green);
+        margin-top: 8px;
+        padding-top: 6px;
+        border-top: 1px dashed var(--border);
+      }
+      .vocab-item.revealed .translation {
+        display: block;
+      }
+      .vocab-item .click-hint {
+        font-size: 10px;
+        color: var(--muted);
+        margin-top: 8px;
+      }
+
+      /* ACTIVITIES */
+      .fill-input {
+        border: none;
+        border-bottom: 2px solid var(--green);
+        background: transparent;
+        width: 200px;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        padding: 4px 6px;
+        outline: none;
+        margin: 0 4px;
+      }
+      .fill-input:focus {
+        border-bottom-color: var(--green-light);
+      }
+      .check-btn {
+        background: var(--green);
+        color: white;
+        border: none;
+        border-radius: 40px;
+        padding: 10px 28px;
+        font-weight: 700;
+        cursor: pointer;
+        margin-top: 16px;
+        transition: 0.2s;
+      }
+      .check-btn:hover {
+        background: var(--green-dark);
+      }
+      .activity-result {
+        margin-top: 14px;
+        padding: 12px;
+        background: var(--green-soft);
+        border-radius: 14px;
+        font-size: 13px;
+        display: none;
+      }
+
+      /* QUIZ */
+      .quiz-question {
+        background: white;
+        border: 1.5px solid var(--border);
+        border-radius: 24px;
+        padding: 22px;
+        margin-bottom: 20px;
+      }
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .option {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 12px 18px;
+        border: 1.5px solid var(--border);
+        border-radius: 16px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .option:hover {
+        border-color: var(--green);
+        background: var(--green-soft);
+      }
+      .option.correct {
+        border-color: var(--green);
+        background: #e1f3e9;
+      }
+      .option.wrong {
+        border-color: var(--red);
+        background: #ffe6e0;
+      }
+      .feedback {
+        display: none;
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 14px;
+      }
+      .correct-fb {
+        background: #e1f3e9;
+        color: var(--green-dark);
+        border-left: 4px solid var(--green);
+      }
+      .wrong-fb {
+        background: #ffe6e0;
+        color: #b14320;
+        border-left: 4px solid var(--red);
+      }
+      .score-display {
+        background: linear-gradient(135deg, var(--green-dark), var(--green));
+        color: white;
+        border-radius: 28px;
+        padding: 28px;
+        text-align: center;
+        margin-top: 24px;
+        display: none;
+      }
+      .btn {
+        background: var(--yellow);
+        color: var(--green-dark);
+        border: none;
+        border-radius: 40px;
+        padding: 10px 24px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      /* PRODUCTION */
+      .production-input {
+        width: 100%;
+        padding: 12px;
+        border: 1.5px solid var(--border);
+        border-radius: 16px;
+        font-family: "Poppins", sans-serif;
+        margin: 8px 0;
+        resize: vertical;
+      }
+
+      .teacher-credit {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px;
+        border-top: 1px solid var(--border);
+        color: var(--green-dark);
+        font-weight: 600;
+      }
+
+      hr {
+        margin: 20px 0;
+        border: none;
+        border-top: 2px dashed var(--border);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content-wrap">
+      <!-- HEADER DA AULA -->
+      <div class="lesson-header">
+        <h1>👨‍👩‍👧 AULA 2 · <span>Family + Possessives + Genitive</span></h1>
+        <p>Vocabulário da família · Pronomes possessivos · Posse com 's</p>
+        <a href="index.html" class="back-home"
+          >← Voltar para Central de Revisões</a
+        >
+      </div>
+
+      <!-- ==================== 1. FAMILY ==================== -->
+      <div class="section-header">
+        <div class="section-icon">👨‍👩‍👧</div>
+        <div>
+          <h2>Family (Família)</h2>
+          <p>Vocabulário essencial</p>
+        </div>
+      </div>
+      <div class="family-grid">
+        <div class="family-card">
+          <div class="en">father</div>
+          <div class="pt">pai</div>
+        </div>
+        <div class="family-card">
+          <div class="en">mother</div>
+          <div class="pt">mãe</div>
+        </div>
+        <div class="family-card">
+          <div class="en">dad</div>
+          <div class="pt">pai (informal)</div>
+        </div>
+        <div class="family-card">
+          <div class="en">mom</div>
+          <div class="pt">mãe (informal)</div>
+        </div>
+        <div class="family-card">
+          <div class="en">brother</div>
+          <div class="pt">irmão</div>
+        </div>
+        <div class="family-card">
+          <div class="en">sister</div>
+          <div class="pt">irmã</div>
+        </div>
+        <div class="family-card">
+          <div class="en">grandfather</div>
+          <div class="pt">avô</div>
+        </div>
+        <div class="family-card">
+          <div class="en">grandmother</div>
+          <div class="pt">avó</div>
+        </div>
+        <div class="family-card">
+          <div class="en">uncle</div>
+          <div class="pt">tio</div>
+        </div>
+        <div class="family-card">
+          <div class="en">aunt</div>
+          <div class="pt">tia</div>
+        </div>
+        <div class="family-card">
+          <div class="en">cousin</div>
+          <div class="pt">primo / prima</div>
+        </div>
+      </div>
+      <div class="example">
+        📌 Exemplos:<br />✔️ This is <strong>my mother</strong>.<br />✔️ He is
+        <strong>my brother</strong>.<br />✔️ She is <strong>my sister</strong>.
+      </div>
+
+      <!-- ==================== 2. POSSESSIVE ADJECTIVES ==================== -->
+      <div class="section-header">
+        <div class="section-icon">🔑</div>
+        <div>
+          <h2>Possessive Adjectives</h2>
+          <p>Pronomes possessivos (antes do substantivo)</p>
+        </div>
+      </div>
+      <div class="card">
+        <table class="poss-table">
+          <thead>
+            <tr>
+              <th>Pronome</th>
+              <th>Significado</th>
+              <th>Exemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>my</strong></td>
+              <td>meu / minha</td>
+              <td>This is <strong>my</strong> mother.</td>
+            </tr>
+            <tr>
+              <td><strong>your</strong></td>
+              <td>seu / sua (de você)</td>
+              <td>Is this <strong>your</strong> book?</td>
+            </tr>
+            <tr>
+              <td><strong>his</strong></td>
+              <td>dele</td>
+              <td><strong>His</strong> name is John.</td>
+            </tr>
+            <tr>
+              <td><strong>her</strong></td>
+              <td>dela</td>
+              <td><strong>Her</strong> house is big.</td>
+            </tr>
+            <tr>
+              <td><strong>its</strong></td>
+              <td>dele/dela (coisas/animais)</td>
+              <td>The dog has <strong>its</strong> toy.</td>
+            </tr>
+            <tr>
+              <td><strong>our</strong></td>
+              <td>nosso / nossa</td>
+              <td><strong>Our</strong> teacher is Erick.</td>
+            </tr>
+            <tr>
+              <td><strong>their</strong></td>
+              <td>deles / delas</td>
+              <td><strong>Their</strong> car is new.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="warning-box">
+          <strong>⚠️ ERRO CLÁSSICO – CORRIGE NA HORA!</strong><br />
+          ❌ "He is <strong>my father's</strong>" (errado nesse contexto)<br />
+          ✔️ "He is <strong>my father</strong>"<br />
+          👉 <strong>Possessive adjective NÃO usa 's</strong>
+        </div>
+      </div>
+
+      <!-- ==================== 3. GENITIVE ('S) ==================== -->
+      <div class="section-header">
+        <div class="section-icon">🧬</div>
+        <div>
+          <h2>Genitive (‘s) – Posse em Inglês</h2>
+          <p>Equivalente ao "de" em português</p>
+        </div>
+      </div>
+      <div class="card">
+        <p><strong>📌 Estrutura:</strong> <code>Nome + ‘s + objeto</code></p>
+        <div class="genitive-ex">
+          <strong>Exemplos:</strong><br />
+          John's car → o carro <strong>do</strong> John<br />
+          Maria's house → a casa <strong>da</strong> Maria<br />
+          The teacher's book → o livro <strong>do</strong> professor
+        </div>
+        <div class="rule-box">
+          <strong>📌 QUANDO USAR ‘S?</strong><br />
+          ✅ Pessoas<br />
+          ✅ Animais<br />
+          ❌ Coisas (geralmente usamos "of": the door of the car)
+        </div>
+        <div class="rule-box">
+          <strong>⚠️ REGRAS IMPORTANTES</strong><br />
+          🔹 <strong>Nome no singular:</strong> John →
+          <strong>John's</strong> book<br />
+          🔹 <strong>Nome no plural terminado em "s":</strong> my parents →
+          <strong>my parents'</strong> house (só apóstrofo)<br />
+          🔹 <strong>Nome irregular (plural sem "s"):</strong> children →
+          <strong>children's</strong> toys
+        </div>
+        <div class="warning-box">
+          <strong>🔥 DIFERENÇA IMPORTANTE</strong><br />
+          📌 <strong>Possessive Adjective:</strong> my mother (minha mãe)<br />
+          📌 <strong>Genitive (‘s):</strong> Maria's mother (mãe da Maria)
+        </div>
+      </div>
+
+      <!-- ==================== VOCABULÁRIO INTERATIVO ==================== -->
+      <div class="section-header">
+        <div class="section-icon">📖</div>
+        <div>
+          <h2>Vocabulary</h2>
+          <p>Clique nos cards para ver a tradução</p>
+        </div>
+      </div>
+      <div class="vocab-grid">
+        <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+          <div class="word">father</div>
+          <div class="translation">pai</div>
+          <div class="click-hint">🔍 clique</div>
+        </div>
+        <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+          <div class="word">mother</div>
+          <div class="translation">mãe</div>
+          <div class="click-hint">🔍 clique</div>
+        </div>
+        <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+          <div class="word">brother</div>
+          <div class="translation">irmão</div>
+          <div class="click-hint">🔍 clique</div>
+        </div>
+        <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+          <div class="word">sister</div>
+          <div class="translation">irmã</div>
+          <div class="click-hint">🔍 clique</div>
+        </div>
+        <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+          <div class="word">grandfather</div>
+          <div class="translation">avô</div>
+          <div class="click-hint">🔍 clique</div>
+        </div>
+        <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+          <div class="word">grandmother</div>
+          <div class="translation">avó</div>
+          <div class="click-hint">🔍 clique</div>
+        </div>
+        <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+          <div class="word">uncle</div>
+          <div class="translation">tio</div>
+          <div class="click-hint">🔍 clique</div>
+        </div>
+        <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+          <div class="word">aunt</div>
+          <div class="translation">tia</div>
+          <div class="click-hint">🔍 clique</div>
+        </div>
+        <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+          <div class="word">cousin</div>
+          <div class="translation">primo(a)</div>
+          <div class="click-hint">🔍 clique</div>
+        </div>
+        <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+          <div class="word">my</div>
+          <div class="translation">meu/minha</div>
+          <div class="click-hint">🔍 clique</div>
+        </div>
+        <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+          <div class="word">your</div>
+          <div class="translation">seu/sua</div>
+          <div class="click-hint">🔍 clique</div>
+        </div>
+        <div class="vocab-item" onclick="this.classList.toggle('revealed')">
+          <div class="word">their</div>
+          <div class="translation">deles/delas</div>
+          <div class="click-hint">🔍 clique</div>
+        </div>
+      </div>
+
+      <!-- ==================== ATIVIDADES ==================== -->
+      <div class="section-header">
+        <div class="section-icon">✏️</div>
+        <div>
+          <h2>Practice Activities</h2>
+          <p>Exercícios para fixar</p>
+        </div>
+      </div>
+
+      <!-- Activity 1 - Complete com possessivos -->
+      <div class="card">
+        <h3>📝 Activity 1 – Complete com o possessive adjective correto</h3>
+        <p>
+          1. This is __________ (meu) father.<br />
+          <input
+            class="fill-input"
+            id="act1_1"
+            placeholder="digite sua resposta"
+          />
+        </p>
+        <p>
+          2. __________ (dela) name is Anna.<br />
+          <input
+            class="fill-input"
+            id="act1_2"
+            placeholder="digite sua resposta"
+          />
+        </p>
+        <p>
+          3. This is __________ (nosso) house.<br />
+          <input
+            class="fill-input"
+            id="act1_3"
+            placeholder="digite sua resposta"
+          />
+        </p>
+        <p>
+          4. __________ (deles) car is very fast.<br />
+          <input
+            class="fill-input"
+            id="act1_4"
+            placeholder="digite sua resposta"
+          />
+        </p>
+        <p>
+          5. He is __________ (meu) brother.<br />
+          <input
+            class="fill-input"
+            id="act1_5"
+            placeholder="digite sua resposta"
+          />
+        </p>
+        <button class="check-btn" onclick="checkActivity1()">
+          Verificar ✓
+        </button>
+        <div id="act1Result" class="activity-result"></div>
+      </div>
+
+      <!-- Activity 2 - Genitive ('s) -->
+      <div class="card">
+        <h3>🧬 Activity 2 – Use 's (Genitive) para reescrever</h3>
+        <p>
+          1. The car of John →
+          <input
+            class="fill-input"
+            id="act2_1"
+            placeholder="digite sua resposta"
+          />
+        </p>
+        <p>
+          2. The house of Maria →
+          <input
+            class="fill-input"
+            id="act2_2"
+            placeholder="digite sua resposta"
+          />
+        </p>
+        <p>
+          3. The book of the teacher →
+          <input
+            class="fill-input"
+            id="act2_3"
+            placeholder="digite sua resposta"
+          />
+        </p>
+        <p>
+          4. The toys of the children →
+          <input
+            class="fill-input"
+            id="act2_4"
+            placeholder="digite sua resposta"
+          />
+        </p>
+        <p>
+          5. The house of my parents →
+          <input
+            class="fill-input"
+            id="act2_5"
+            placeholder="digite sua resposta"
+          />
+        </p>
+        <button class="check-btn" onclick="checkActivity2()">
+          Verificar ✓
+        </button>
+        <div id="act2Result" class="activity-result"></div>
+      </div>
+
+      <!-- Activity 3 - Corrigir erros -->
+      <div class="card">
+        <h3>⚠️ Activity 3 – Corrija os erros</h3>
+        <p>
+          1. He is my father's →
+          <input
+            class="fill-input"
+            id="act3_1"
+            placeholder="digite sua resposta"
+            style="width: 250px"
+          />
+        </p>
+        <p>
+          2. She is her mother →
+          <input
+            class="fill-input"
+            id="act3_2"
+            placeholder="digite sua resposta"
+            style="width: 250px"
+          />
+        </p>
+        <p>
+          3. This is the John car →
+          <input
+            class="fill-input"
+            id="act3_3"
+            placeholder="digite sua resposta"
+            style="width: 250px"
+          />
+        </p>
+        <button class="check-btn" onclick="checkActivity3()">
+          Verificar ✓
+        </button>
+        <div id="act3Result" class="activity-result"></div>
+      </div>
+
+      <!-- Activity 4 - Produção livre -->
+      <div class="card">
+        <h3>✍️ Activity 4 – Produção livre</h3>
+        <p>🔹 Escreva 2 frases sobre sua família:</p>
+        <textarea
+          class="production-input"
+          id="prod1"
+          rows="3"
+          placeholder="Ex: My mother is a teacher. My brother's name is Lucas."
+        ></textarea>
+        <p>
+          🔹 Use pelo menos 1 possessive adjective (my, your, his, her, etc.)
+        </p>
+        <p>🔹 Use pelo menos 1 genitive ('s)</p>
+        <button class="check-btn" onclick="checkProduction()">
+          Verificar minhas frases
+        </button>
+        <div id="prodResult" class="activity-result"></div>
+      </div>
+
+      <!-- ==================== QUIZ ==================== -->
+      <div class="section-header">
+        <div class="section-icon">🎯</div>
+        <div>
+          <h2>Quiz – Teste seus conhecimentos</h2>
+          <p>Escolha a alternativa correta</p>
+        </div>
+      </div>
+      <div id="quizContainer"></div>
+      <div id="scoreDisplay" class="score-display">
+        <div class="score-num" id="scoreNum">0/8</div>
+        <p id="scoreMsg">Você completou o quiz!</p>
+        <button class="btn" onclick="resetQuiz()">🔄 Tentar novamente</button>
+      </div>
+
+      <hr />
+      <div class="teacher-credit">
+        ✨ Material preparado por <strong>Teacher Erick</strong> – Colégio
+        Átilla Curumim ✨<br />
+        Aula 2: Family + Possessives + Genitive ('s) – Revise e arrase na prova!
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+      // ==================== ATIVIDADES ====================
+      function checkActivity1() {
+        const answers = ["my", "her", "our", "their", "my"];
+        let correct = 0;
+        for (let i = 1; i <= 5; i++) {
+          let val = document
+            .getElementById(`act1_${i}`)
+            .value.trim()
+            .toLowerCase();
+          if (val === answers[i - 1]) correct++;
+        }
+        const res = document.getElementById("act1Result");
+        res.style.display = "block";
+        res.innerHTML = `<strong>${correct}/5 acertos.</strong> Gabarito: my / her / our / their / my`;
+      }
+
+      function checkActivity2() {
+        const answers = [
+          "john's car",
+          "maria's house",
+          "the teacher's book",
+          "children's toys",
+          "my parents' house",
+        ];
+        let correct = 0;
+        for (let i = 1; i <= 5; i++) {
+          let val = document
+            .getElementById(`act2_${i}`)
+            .value.trim()
+            .toLowerCase()
+            .replace(/\s+/g, " ");
+          if (val === answers[i - 1]) correct++;
+        }
+        const res = document.getElementById("act2Result");
+        res.style.display = "block";
+        res.innerHTML = `<strong>${correct}/5 acertos.</strong> Gabarito: John's car / Maria's house / the teacher's book / children's toys / my parents' house`;
+      }
+
+      function checkActivity3() {
+        const answers = [
+          "he is my father",
+          "she is his mother",
+          "this is john's car",
+        ];
+        let correct = 0;
+        for (let i = 1; i <= 3; i++) {
+          let val = document
+            .getElementById(`act3_${i}`)
+            .value.trim()
+            .toLowerCase()
+            .replace(/\s+/g, " ");
+          if (val === answers[i - 1]) correct++;
+        }
+        const res = document.getElementById("act3Result");
+        res.style.display = "block";
+        res.innerHTML = `<strong>${correct}/3 acertos.</strong> Gabarito: He is my father / She is his mother / This is John's car`;
+      }
+
+      function checkProduction() {
+        const text = document.getElementById("prod1").value.trim();
+        const res = document.getElementById("prodResult");
+        res.style.display = "block";
+        if (text.length < 10) {
+          res.innerHTML =
+            "⚠️ Escreva pelo menos 2 frases completas sobre sua família!";
+        } else {
+          res.innerHTML = `✅ Suas frases:<br>📌 "${text}"<br><br>🎯 Ótimo! Continue praticando, Teacher Erick está de olho!`;
+        }
+      }
+
+      window.checkActivity1 = checkActivity1;
+      window.checkActivity2 = checkActivity2;
+      window.checkActivity3 = checkActivity3;
+      window.checkProduction = checkProduction;
+
+      // ==================== QUIZ ====================
+      const quizQuestions = [
+        {
+          text: "Qual é o possessive adjective para 'dela'?",
+          options: ["his", "her", "my", "your"],
+          correct: 1,
+          feedback: "✅ 'her' significa 'dela'.",
+        },
+        {
+          text: "Complete: This is __________ (meu) father.",
+          options: ["my", "mine", "your", "her"],
+          correct: 0,
+          feedback: "✅ 'my' é o possessive adjective para 'meu/minha'.",
+        },
+        {
+          text: "Qual a forma correta do genitive para 'o carro do John'?",
+          options: ["John car", "Johns car", "John's car", "John of car"],
+          correct: 2,
+          feedback: "✅ John's car = o carro do John.",
+        },
+        {
+          text: "Complete: __________ (deles) house is very big.",
+          options: ["Their", "Theirs", "They", "There"],
+          correct: 0,
+          feedback: "✅ 'their' = deles/delas (possessive adjective).",
+        },
+        {
+          text: "Qual frase está CORRETA?",
+          options: [
+            "He is my father's",
+            "He is my father",
+            "He is father my",
+            "He is father's my",
+          ],
+          correct: 1,
+          feedback: "✅ 'He is my father' – possessive adjective NÃO usa 's.",
+        },
+        {
+          text: "Como se diz 'a casa da Maria' em inglês?",
+          options: [
+            "Maria house",
+            "Maria's house",
+            "house of Maria",
+            "the Maria house",
+          ],
+          correct: 1,
+          feedback: "✅ Maria's house = casa da Maria.",
+        },
+        {
+          text: "Qual é o possessive adjective para 'nosso/nossa'?",
+          options: ["your", "their", "our", "its"],
+          correct: 2,
+          feedback: "✅ 'our' = nosso/nossa.",
+        },
+        {
+          text: "Complete a frase: The __________ toys are in the room. (brinquedos das crianças)",
+          options: ["childrens", "children's", "childrens'", "children of"],
+          correct: 1,
+          feedback: "✅ children's toys (plural irregular: children + 's).",
+        },
+      ];
+
+      let answered = new Array(8).fill(false);
+      let quizScore = 0;
+
+      function buildQuiz() {
+        const container = document.getElementById("quizContainer");
+        if (!container) return;
+        container.innerHTML = "";
+        answered = new Array(8).fill(false);
+        quizScore = 0;
+        document.getElementById("scoreDisplay").style.display = "none";
+        quizQuestions.forEach((q, idx) => {
+          const div = document.createElement("div");
+          div.className = "quiz-question";
+          div.id = `q_${idx}`;
+          div.innerHTML = `
+        <p class="qtext"><strong>${idx + 1}.</strong> ${q.text}</p>
+        <div class="options">
+          ${q.options.map((opt, oi) => `<div class="option" id="opt_${idx}_${oi}" onclick="selectOption(${idx}, ${oi})"><span class="letter">${String.fromCharCode(65 + oi)}</span> ${opt}</div>`).join("")}
+        </div>
+        <div class="feedback" id="fb_${idx}"></div>
+      `;
+          container.appendChild(div);
+        });
+      }
+
+      window.selectOption = function (qi, oi) {
+        if (answered[qi]) return;
+        answered[qi] = true;
+        const q = quizQuestions[qi];
+        const isCorrect = q.correct === oi;
+        if (isCorrect) quizScore++;
+        for (let i = 0; i < q.options.length; i++) {
+          const optEl = document.getElementById(`opt_${qi}_${i}`);
+          if (i === q.correct) optEl.classList.add("correct");
+          else if (i === oi && !isCorrect) optEl.classList.add("wrong");
+        }
+        const fbDiv = document.getElementById(`fb_${qi}`);
+        fbDiv.className = `feedback ${isCorrect ? "correct-fb" : "wrong-fb"}`;
+        fbDiv.style.display = "block";
+        fbDiv.textContent = isCorrect
+          ? q.feedback
+          : `❌ Incorreto. ${q.feedback}`;
+        if (answered.every((v) => v === true)) showScore();
+      };
+
+      function showScore() {
+        const sd = document.getElementById("scoreDisplay");
+        sd.style.display = "block";
+        document.getElementById("scoreNum").innerText =
+          `${quizScore}/${quizQuestions.length}`;
+        let msg = "";
+        const pct = (quizScore / quizQuestions.length) * 100;
+        if (pct === 100)
+          msg =
+            "🏆 Perfeito! Você domina Family, Possessives e Genitive! Parabéns!";
+        else if (pct >= 70)
+          msg = "👍 Muito bem! Revise os erros e fique ainda mais forte!";
+        else
+          msg =
+            "📚 Continue praticando! Reveja as regras dos possessives e do 's.";
+        document.getElementById("scoreMsg").innerText = msg;
+        sd.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      window.resetQuiz = function () {
+        buildQuiz();
+      };
+
+      buildQuiz();
+    </script>
+  </body>
+</html>

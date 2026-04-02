@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8º Ano | Revisão Bimestral | Teacher Erick</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f0faf5;
+        color: #1a2e22;
+      }
+
+      :root {
+        --green: #2d9e6b;
+        --green-light: #4cc98a;
+        --green-dark: #1a6845;
+        --green-soft: #e8f5ee;
+        --yellow: #f5c518;
+        --orange: #f07b2a;
+        --red: #e74c3c;
+        --border: #c8e8d5;
+        --muted: #5a7a65;
+      }
+
+      .year-header {
+        background: linear-gradient(
+          135deg,
+          var(--green-dark) 0%,
+          var(--green) 60%,
+          var(--green-light) 100%
+        );
+        color: white;
+        padding: 32px 24px;
+        text-align: center;
+      }
+      .year-header h1 {
+        font-family: "Nunito", sans-serif;
+        font-size: 32px;
+        font-weight: 900;
+      }
+      .year-header h1 span {
+        color: var(--yellow);
+      }
+      .year-header p {
+        margin-top: 8px;
+        opacity: 0.9;
+      }
+      .back-home {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 40px;
+        padding: 6px 18px;
+        font-size: 13px;
+        margin-top: 16px;
+        text-decoration: none;
+        color: white;
+      }
+      .back-home:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      /* TABS */
+      .lessons-tabs {
+        background: white;
+        border-bottom: 2px solid var(--border);
+        display: flex;
+        overflow-x: auto;
+        gap: 0;
+        padding: 0 16px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .tab-btn {
+        background: none;
+        border: none;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 700;
+        padding: 16px 24px;
+        white-space: nowrap;
+        border-bottom: 3px solid transparent;
+        transition: 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+      }
+      .tab-btn:hover {
+        color: var(--green);
+      }
+      .tab-btn.active {
+        color: var(--green);
+        border-bottom-color: var(--green);
+      }
+
+      /* IFRAME CONTAINER */
+      .iframe-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0;
+        background: #f0faf5;
+      }
+      .lesson-frame {
+        width: 100%;
+        min-height: calc(100vh - 180px);
+        border: none;
+        background: #f0faf5;
+        border-radius: 0;
+      }
+
+      .teacher-credit {
+        text-align: center;
+        margin-top: 20px;
+        padding: 20px;
+        border-top: 1px solid var(--border);
+        color: var(--green-dark);
+        font-weight: 600;
+        background: #f0faf5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="year-header">
+      <h1>📗 8º Ano · <span>Revisão Bimestral</span></h1>
+      <p>Escolha uma aula abaixo e revise o conteúdo para a prova!</p>
+      <a href="../index.html" class="back-home"
+        >← Voltar para Central de Revisões</a
+      >
+    </div>
+
+    <div class="lessons-tabs">
+      <button class="tab-btn active" data-aula="aula1">
+        📘 AULA 1 · Comparatives & Superlatives
+      </button>
+      <button class="tab-btn" data-aula="aula2">
+        👨‍👩‍👧 AULA 2 · Family + Possessives + Genitive
+      </button>
+      <button class="tab-btn" data-aula="aula3">
+        🚧 AULA 3 · Em construção
+      </button>
+      <button class="tab-btn" data-aula="aula4">
+        🚧 AULA 4 · Em construção
+      </button>
+    </div>
+
+    <div class="iframe-container">
+      <iframe id="lessonFrame" class="lesson-frame" src="aula1.html"></iframe>
+    </div>
+
+    <div class="teacher-credit">
+      ✨ Material preparado por <strong>Teacher Erick</strong> – Colégio Átilla
+      Curumim ✨<br />
+      Estude com dedicação e arrase na prova bimestral!
+    </div>
+
+    <script>
+      const tabs = document.querySelectorAll(".tab-btn");
+      const frame = document.getElementById("lessonFrame");
+
+      const aulas = {
+        aula1: "aula1.html",
+        aula2: "aula2.html",
+        aula3: "aula3.html",
+        aula4: "aula4.html",
+      };
+
+      function switchAula(aulaId) {
+        if (aulas[aulaId]) {
+          frame.src = aulas[aulaId];
+        }
+        tabs.forEach((btn) => {
+          btn.classList.remove("active");
+          if (btn.getAttribute("data-aula") === aulaId) {
+            btn.classList.add("active");
+          }
+        });
+      }
+
+      tabs.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const aulaId = btn.getAttribute("data-aula");
+          switchAula(aulaId);
+        });
+      });
+    </script>
+  </body>
+</html>
